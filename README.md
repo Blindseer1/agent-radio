@@ -1,4 +1,4 @@
-# 📻 AI Radio DJ
+# 📻 Agent Radio
 
 An autonomous internet radio station powered by local AI. Music plays continuously through an Icecast stream, with an LLM-driven Director agent selecting the next track and a DJ agent writing live banter that is synthesised into voice and mixed in before each transition — all without human intervention.
 
