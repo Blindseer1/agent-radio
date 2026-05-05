@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI DJ Radio Console</title>
+    <script src="https://unpkg.com/htmx.org@1.9.10"></script>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;700&family=Inter:wght@300;400;600;800&display=swap');
+        
+        body { font-family: 'Inter', sans-serif; }
+        .mono { font-family: 'JetBrains Mono', monospace; }
+        
+        .scanline {
+            background: linear-gradient(to bottom, rgba(18, 16, 16, 0) 50%, rgba(0, 0, 0, 0.25) 50%), linear-gradient(90deg, rgba(255, 0, 0, 0.06), rgba(0, 255, 0, 0.02), rgba(0, 0, 255, 0.06));
+            background-size: 100% 2px, 3px 100%;
+        }
+
+        @keyframes pulse-cyan {
+            0% { box-shadow: 0 0 0 0 rgba(34, 211, 238, 0.4); }
+            70% { box-shadow: 0 0 0 10px rgba(34, 211, 238, 0); }
+            100% { box-shadow: 0 0 0 0 rgba(34, 211, 238, 0); }
+        }
+        .ai-pulse { animation: pulse-cyan 2s infinite; }
+    </style>
+</head>
+<body class="bg-zinc-950 text-zinc-100 min-h-screen">
+
+    <header class="border-b border-zinc-800 p-4 mb-8 bg-zinc-900/50 backdrop-blur-md sticky top-0 z-50">
+        <div class="container mx-auto flex justify-between items-center">
+            <h1 class="text-2xl font-black tracking-tighter italic bg-gradient-to-r from-blue-400 to-emerald-400 bg-clip-text text-transparent">
+                RADIO AI LOCAL <span class="text-xs font-mono text-zinc-500 uppercase not-italic ml-2">v1.0 Beta</span>
+            </h1>
+            <div class="flex items-center gap-4">
+                <span class="flex h-3 w-3 rounded-full bg-emerald-500 ai-pulse"></span>
+                <span class="text-xs font-bold text-zinc-400 uppercase tracking-widest">Ollama Online</span>
+            </div>
+        </div>
+    </header>
+
+    
+    <footer class="container mx-auto px-4 py-8 border-t border-zinc-900 text-center text-zinc-600 text-xs">
+        Proiectat cu HTMX + Tailwind + Ollama | Procesare locală C++
+    </footer>
+
+</body>
+</html>
