@@ -25,7 +25,14 @@ const (
 	Playing
 )
 
-var currentState = Idle
+var (
+	voteYes      int
+	voteNo       int
+	voteMutex    sync.Mutex
+	songStart    time.Time
+	songDuration float64
+	currentState = Idle
+)
 
 func setState(s State) {
 	currentState = s
@@ -45,13 +52,11 @@ func analyzeAudio(filePath string) (map[string]interface{}, error) {
 	if err != nil {
 		return nil, err
 	}
-
 	var result map[string]interface{}
 	err = json.Unmarshal(output, &result)
 	if err != nil {
 		return nil, err
 	}
-
 	return result, nil
 }
 
@@ -61,25 +66,21 @@ func callOllama(prompt string, model string) (string, error) {
 		"prompt": prompt,
 		"stream": false,
 	})
-
 	resp, err := http.Post("http://localhost:11434/api/generate", "application/json", bytes.NewBuffer(body))
 	if err != nil {
 		return "", err
 	}
 	defer resp.Body.Close()
-
 	var result map[string]interface{}
 	json.NewDecoder(resp.Body).Decode(&result)
-
 	return result["response"].(string), nil
 }
 
 func saveToDB(db *sql.DB, filePath string, metadata map[string]interface{}) error {
 	fileInfo := metadata["file_info"].(map[string]interface{})
 	audioFeatures := metadata["audio_features"].(map[string]interface{})
-
 	_, err := db.Exec(`
-		INSERT OR IGNORE INTO songs 
+		INSERT OR IGNORE INTO songs
 		(filepath, title, artist, duration, bpm, energy, brightness, danceability, mood_label)
 		VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)`,
 		filePath,
@@ -95,6 +96,57 @@ func saveToDB(db *sql.DB, filePath string, metadata map[string]interface{}) erro
 	return err
 }
 
+func getCandidates(db *sql.DB, currentFile string, currentMood string) ([]map[string]interface{}, error) {
+	// 4 similar songs
+	similar, err := db.Query(`
+		SELECT filepath, title, bpm, mood_label
+		FROM songs
+		WHERE filepath != ?
+		AND mood_label = ?
+		AND id NOT IN (SELECT song_id FROM play_history ORDER BY played_at DESC LIMIT 10)
+		LIMIT 4
+	`, currentFile, currentMood)
+	if err != nil {
+		return nil, err
+	}
+	defer similar.Close()
+
+	var candidates []map[string]interface{}
+	for similar.Next() {
+		var fp, title, mood string
+		var bpm float64
+		similar.Scan(&fp, &title, &bpm, &mood)
+		candidates = append(candidates, map[string]interface{}{
+			"filepath": fp, "title": title, "bpm": bpm, "mood": mood,
+		})
+	}
+
+	// 2 different songs
+	different, err := db.Query(`
+		SELECT filepath, title, bpm, mood_label
+		FROM songs
+		WHERE filepath != ?
+		AND mood_label != ?
+		AND id NOT IN (SELECT song_id FROM play_history ORDER BY played_at DESC LIMIT 10)
+		LIMIT 2
+	`, currentFile, currentMood)
+	if err != nil {
+		return nil, err
+	}
+	defer different.Close()
+
+	for different.Next() {
+		var fp, title, mood string
+		var bpm float64
+		different.Scan(&fp, &title, &bpm, &mood)
+		candidates = append(candidates, map[string]interface{}{
+			"filepath": fp, "title": title, "bpm": bpm, "mood": mood,
+		})
+	}
+
+	return candidates, nil
+}
+
 func main() {
 	db, err := sql.Open("sqlite3", "/root/agent-radio/librarian/radio_library.db")
 	if err != nil {
@@ -103,29 +155,23 @@ func main() {
 	}
 	defer db.Close()
 
-	http.Handle("/", http.FileServer(http.Dir("/root/agent-radio/frontend/agent-radio/dist")))
-
 	http.HandleFunc("/upload", func(w http.ResponseWriter, r *http.Request) {
 		w.Header().Set("Access-Control-Allow-Origin", "*")
 		w.Header().Set("Access-Control-Allow-Methods", "POST, OPTIONS")
 		w.Header().Set("Access-Control-Allow-Headers", "*")
-
 		if r.Method == http.MethodOptions {
 			return
 		}
-
 		if r.Method != http.MethodPost {
 			http.Error(w, "Method needs to be POST", http.StatusMethodNotAllowed)
 			return
 		}
-
 		file, header, err := r.FormFile("file")
 		if err != nil {
 			http.Error(w, "could not read file", http.StatusBadRequest)
 			return
 		}
 		defer file.Close()
-
 		dst, err := os.Create("/music/" + header.Filename)
 		if err != nil {
 			http.Error(w, "could not save file", http.StatusInternalServerError)
@@ -133,7 +179,6 @@ func main() {
 		}
 		defer dst.Close()
 		io.Copy(dst, file)
-
 		result, err := analyzeAudio("/music/" + header.Filename)
 		if err != nil {
 			fmt.Println("analysis error:", err)
@@ -146,36 +191,36 @@ func main() {
 		json.NewEncoder(w).Encode(result)
 	})
 
-	var (
-		voteYes      int
-		voteNo       int
-		voteMutex    sync.Mutex
-		songStart    time.Time
-		songDuration float64
-	)
-
 	http.HandleFunc("/track-started", func(w http.ResponseWriter, r *http.Request) {
+		fmt.Println("TRACK STARTED CALLED", r.Method)
 		if r.Method != http.MethodPost {
 			http.Error(w, "POST only", http.StatusMethodNotAllowed)
 			return
 		}
 
-		var metadata map[string]interface{}
-		json.NewDecoder(r.Body).Decode(&metadata)
+		body, _ := io.ReadAll(r.Body)
 
-		// Get filepath from Liquidsoap metadata
-		filepath, _ := metadata["filename"].(string)
-		fmt.Println("Track started:", filepath)
+		var pairs [][]string
+		json.Unmarshal(body, &pairs)
 
-		// Reset votes
+		metadata := make(map[string]string)
+		for _, pair := range pairs {
+			if len(pair) == 2 {
+				metadata[pair[0]] = pair[1]
+			}
+		}
+
+		fp := metadata["filename"]
+		fmt.Println("Filename:", fp)
+
 		voteMutex.Lock()
 		voteYes = 0
 		voteNo = 0
 		voteMutex.Unlock()
 
-		// Look up duration in SQLite
 		var duration float64
-		err := db.QueryRow("SELECT duration FROM songs WHERE filepath = ?", filepath).Scan(&duration)
+		var currentMood string
+		err := db.QueryRow("SELECT duration, mood_label FROM songs WHERE filepath = ?", fp).Scan(&duration, &currentMood)
 		if err != nil {
 			fmt.Println("song not found in db:", err)
 			w.WriteHeader(http.StatusOK)
@@ -186,31 +231,48 @@ func main() {
 		songDuration = duration
 		setState(Playing)
 
-		// Start timers in background
 		go func() {
-			// Halfway point - lock voting
 			half := time.Duration(duration/2) * time.Second
 			time.Sleep(half)
 			fmt.Println("Halfway - locking votes in 10s")
 			time.Sleep(10 * time.Second)
 
 			voteMutex.Lock()
-			result := "like"
+			voteResult := "like"
 			if voteNo > voteYes {
-				result = "dislike"
+				voteResult = "dislike"
 			}
 			voteMutex.Unlock()
-			fmt.Println("Vote result:", result)
+			fmt.Println("Vote result:", voteResult)
 
-			// Pipeline trigger at duration - 45s
 			remaining := time.Duration(duration)*time.Second - time.Since(songStart) - 45*time.Second
 			if remaining > 0 {
 				time.Sleep(remaining)
 			}
 
 			setState(Selecting)
-			fmt.Println("Triggering pipeline, vote was:", result)
-			// TODO: call Ollama here
+			fmt.Println("Triggering pipeline, vote was:", voteResult)
+
+			candidates, err := getCandidates(db, fp, currentMood)
+			if err != nil || len(candidates) == 0 {
+				fmt.Println("no candidates found:", err)
+				return
+			}
+
+			candidatesJSON, _ := json.Marshal(candidates)
+			directorPrompt := fmt.Sprintf(`You are a radio DJ director. Pick the next song to play.
+Current song: %s
+Listener vote: %s
+Candidates: %s
+Respond ONLY with valid JSON: {"choice": "<filepath>", "reason": "<why>"}`, fp, voteResult, string(candidatesJSON))
+
+			setState(Generating)
+			response, err := callOllama(directorPrompt, "qwen3:8b")
+			if err != nil {
+				fmt.Println("ollama error:", err)
+				return
+			}
+			fmt.Println("Director response:", response)
 		}()
 
 		w.WriteHeader(http.StatusOK)
@@ -224,6 +286,8 @@ func main() {
 		w.(http.Flusher).Flush()
 		<-r.Context().Done()
 	})
+
+	http.Handle("/", http.FileServer(http.Dir("/root/agent-radio/frontend/agent-radio/dist")))
 
 	fmt.Println("Server starting on :8080")
 	http.ListenAndServe(":8080", nil)
