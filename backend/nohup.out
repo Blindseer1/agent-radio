@@ -1056,3 +1056,188 @@ Parsed metadata: map[compatible_brands:isomiso2avc1mp41 decoder:ffmpeg encoder:L
 Filename: /music/Get It Now.mp3
 State: playing
 Server starting on :8080
+Server starting on :8080
+Server starting on :8080
+TRACK STARTED CALLED POST
+Parsed metadata: map[artist:Artist Name compatible_brands:iso6mp41 decoder:ffmpeg encoder:Lavf58.29.100 encoding:Lavf58.29.100 filename:/music/SABATON - Primo Victoria (Official Music Video).mp3 initial_uri:/music/SABATON - Primo Victoria (Official Music Video).mp3 kind:{audio=pcm(stereo)} major_brand:dash minor_version:0 on_air:2026/06/09 11:08:33 on_air_timestamp:1781003313.00 rid:11 source:music status:playing temporary:false title:Song Title]
+Filename: /music/SABATON - Primo Victoria (Official Music Video).mp3
+State: playing
+Halfway - locking votes in 10s
+Vote result: like
+State: selecting
+Triggering pipeline, vote was: like
+TRACK STARTED CALLED POST
+Parsed metadata: map[compatible_brands:isommp42 decoder:ffmpeg encoder:Lavf58.29.100 encoding:Lavf58.29.100 filename:/music/DJ Antoine vs Timati feat. Kalenna - Welcome to St. Tropez (DJ Antoine vs Mad Mark Remix) [Lyrics].mp3 initial_uri:/music/DJ Antoine vs Timati feat. Kalenna - Welcome to St. Tropez (DJ Antoine vs Mad Mark Remix) [Lyrics].mp3 kind:{audio=pcm(stereo)} major_brand:mp42 minor_version:0 on_air:2026/06/09 11:12:22 on_air_timestamp:1781003542.00 rid:12 source:music status:playing temporary:false]
+Filename: /music/DJ Antoine vs Timati feat. Kalenna - Welcome to St. Tropez (DJ Antoine vs Mad Mark Remix) [Lyrics].mp3
+State: playing
+Halfway - locking votes in 10s
+Vote result: like
+State: selecting
+Triggering pipeline, vote was: like
+TRACK STARTED CALLED POST
+Parsed metadata: map[compatible_brands:isommp42 decoder:ffmpeg encoder:Lavf60.16.100 encoding:Lavf60.16.100 filename:/music/Sete De Noi x Desert Rain (Adrian Sasca Remix).mp3 initial_uri:/music/Sete De Noi x Desert Rain (Adrian Sasca Remix).mp3 kind:{audio=pcm(stereo)} major_brand:mp42 minor_version:0 on_air:2026/06/09 11:16:03 on_air_timestamp:1781003763.00 rid:13 source:music status:playing temporary:false]
+Filename: /music/Sete De Noi x Desert Rain (Adrian Sasca Remix).mp3
+State: playing
+Halfway - locking votes in 10s
+Vote result: like
+State: selecting
+Triggering pipeline, vote was: like
+TRACK STARTED CALLED POST
+Parsed metadata: map[album:Music to Go Postal By artist:Rachel Immerman comment:http://www.gog.com copyright:© 2006 Running With Scissors decoder:ffmpeg filename:/music/07 Burned Feet.mp3 genre:0 initial_uri:/music/07 Burned Feet.mp3 kind:{audio=pcm(stereo)} label:Running With Scissors on_air:2026/06/09 11:19:06 on_air_timestamp:1781003946.00 publisher:Running With Scissors rid:14 source:music status:playing temporary:false title:Burned Feet tracknumber:7/14 year:2006]
+Filename: /music/07 Burned Feet.mp3
+State: playing
+Halfway - locking votes in 10s
+Vote result: like
+State: selecting
+Triggering pipeline, vote was: like
+TRACK STARTED CALLED POST
+Parsed metadata: map[compatible_brands:isomiso2avc1mp41 decoder:ffmpeg encoder:Lavf60.16.100 encoding:Lavf60.16.100 filename:/music/Mike Posner - I Took A Pill In Ibiza (Seeb Remix) (Explicit).mp3 initial_uri:/music/Mike Posner - I Took A Pill In Ibiza (Seeb Remix) (Explicit).mp3 kind:{audio=pcm(stereo)} major_brand:isom minor_version:512 on_air:2026/06/09 11:21:52 on_air_timestamp:1781004112.00 rid:15 source:music status:playing temporary:false]
+Filename: /music/Mike Posner - I Took A Pill In Ibiza (Seeb Remix) (Explicit).mp3
+State: playing
+Halfway - locking votes in 10s
+Vote result: like
+State: selecting
+Triggering pipeline, vote was: like
+TRACK STARTED CALLED POST
+Parsed metadata: map[decoder:ffmpeg encoder:Lavf60.16.100 encoding:Lavf60.16.100 filename:/music/Warriyo - Mortals (feat. Laura Brehm) ｜ Future Trap ｜ NCS - Copyright Free Music [yJg-Y5byMMw].mp3 initial_uri:/music/Warriyo - Mortals (feat. Laura Brehm) ｜ Future Trap ｜ NCS - Copyright Free Music [yJg-Y5byMMw].mp3 kind:{audio=pcm(stereo)} on_air:2026/06/09 11:25:48 on_air_timestamp:1781004348.00 rid:17 source:music status:playing temporary:false]
+Filename: /music/Warriyo - Mortals (feat. Laura Brehm) ｜ Future Trap ｜ NCS - Copyright Free Music [yJg-Y5byMMw].mp3
+State: playing
+Halfway - locking votes in 10s
+Vote result: like
+State: selecting
+Triggering pipeline, vote was: like
+TRACK STARTED CALLED POST
+Parsed metadata: map[compatible_brands:iso6mp41 decoder:ffmpeg encoder:Lavf58.29.100 encoding:Lavf58.29.100 filename:/music/The Prodigy - Get Your Fight On.mp3 initial_uri:/music/The Prodigy - Get Your Fight On.mp3 kind:{audio=pcm(stereo)} major_brand:dash minor_version:0 on_air:2026/06/09 11:29:38 on_air_timestamp:1781004578.00 rid:18 source:music status:playing temporary:false]
+Filename: /music/The Prodigy - Get Your Fight On.mp3
+State: playing
+Halfway - locking votes in 10s
+Vote result: like
+State: selecting
+Triggering pipeline, vote was: like
+TRACK STARTED CALLED POST
+Parsed metadata: map[compatible_brands:isomiso2avc1mp41 decoder:ffmpeg encoder:Lavf60.16.100 encoding:Lavf60.16.100 filename:/music/Mike Posner - I Took A Pill In Ibiza (Seeb Remix) (Explicit).mp3 initial_uri:/music/Mike Posner - I Took A Pill In Ibiza (Seeb Remix) (Explicit).mp3 kind:{audio=pcm(stereo)} major_brand:isom minor_version:512 on_air:2026/06/09 11:33:17 on_air_timestamp:1781004797.00 rid:19 source:music status:playing temporary:false]
+Filename: /music/Mike Posner - I Took A Pill In Ibiza (Seeb Remix) (Explicit).mp3
+State: playing
+Halfway - locking votes in 10s
+Vote result: like
+State: selecting
+Triggering pipeline, vote was: like
+TRACK STARTED CALLED POST
+Parsed metadata: map[album:Music to Go Postal By artist:Rachel Immerman comment:http://www.gog.com copyright:© 2006 Running With Scissors decoder:ffmpeg filename:/music/07 Burned Feet.mp3 genre:0 initial_uri:/music/07 Burned Feet.mp3 kind:{audio=pcm(stereo)} label:Running With Scissors on_air:2026/06/09 11:37:13 on_air_timestamp:1781005033.00 publisher:Running With Scissors rid:20 source:music status:playing temporary:false title:Burned Feet tracknumber:7/14 year:2006]
+Filename: /music/07 Burned Feet.mp3
+State: playing
+Halfway - locking votes in 10s
+Vote result: like
+State: selecting
+Triggering pipeline, vote was: like
+TRACK STARTED CALLED POST
+Parsed metadata: map[decoder:ffmpeg filename:/music/alec_koff-carnaval-484622.mp3 initial_uri:/music/alec_koff-carnaval-484622.mp3 kind:{audio=pcm(stereo)} on_air:2026/06/09 11:39:59 on_air_timestamp:1781005199.00 rid:21 source:music status:playing temporary:false]
+Filename: /music/alec_koff-carnaval-484622.mp3
+State: playing
+Halfway - locking votes in 10s
+Vote result: like
+State: selecting
+Triggering pipeline, vote was: like
+TRACK STARTED CALLED POST
+Parsed metadata: map[decoder:ffmpeg encoder:Lavf62.12.100 encoding:Lavf62.12.100 filename:/music/Three Days Grace - Animal I Have Become [j7rLdd8EiJQ].mp3 initial_uri:/music/Three Days Grace - Animal I Have Become [j7rLdd8EiJQ].mp3 kind:{audio=pcm(stereo)} on_air:2026/06/09 11:41:00 on_air_timestamp:1781005260.00 rid:22 source:music status:playing temporary:false]
+Filename: /music/Three Days Grace - Animal I Have Become [j7rLdd8EiJQ].mp3
+State: playing
+Halfway - locking votes in 10s
+Vote result: like
+State: selecting
+Triggering pipeline, vote was: like
+TRACK STARTED CALLED POST
+Parsed metadata: map[decoder:ffmpeg encoder:Lavf60.16.100 encoding:Lavf60.16.100 filename:/music/Solo Leveling EP 6 OST FULL ＂DARK ARIA ＜LV2＞＂ by SawanoHiroyuki[nZk]：XAI (Lyrics) [WczSfh3gJaU].mp3 initial_uri:/music/Solo Leveling EP 6 OST FULL ＂DARK ARIA ＜LV2＞＂ by SawanoHiroyuki[nZk]：XAI (Lyrics) [WczSfh3gJaU].mp3 kind:{audio=pcm(stereo)} on_air:2026/06/09 11:44:51 on_air_timestamp:1781005491.00 rid:23 source:music status:playing temporary:false]
+Filename: /music/Solo Leveling EP 6 OST FULL ＂DARK ARIA ＜LV2＞＂ by SawanoHiroyuki[nZk]：XAI (Lyrics) [WczSfh3gJaU].mp3
+State: playing
+Halfway - locking votes in 10s
+Vote result: like
+State: selecting
+Triggering pipeline, vote was: like
+TRACK STARTED CALLED POST
+Parsed metadata: map[compatible_brands:isommp42 decoder:ffmpeg encoder:Lavf58.29.100 encoding:Lavf58.29.100 filename:/music/Breaking Benjamin - Awaken (Official Audio).mp3 initial_uri:/music/Breaking Benjamin - Awaken (Official Audio).mp3 kind:{audio=pcm(stereo)} major_brand:mp42 minor_version:0 on_air:2026/06/09 11:47:13 on_air_timestamp:1781005633.00 rid:24 source:music status:playing temporary:false]
+Filename: /music/Breaking Benjamin - Awaken (Official Audio).mp3
+State: playing
+Halfway - locking votes in 10s
+Vote result: like
+State: selecting
+Triggering pipeline, vote was: like
+TRACK STARTED CALLED POST
+Parsed metadata: map[compatible_brands:isomiso2avc1mp41 decoder:ffmpeg encoder:Lavf60.16.100 encoding:Lavf60.16.100 filename:/music/Get It Now.mp3 initial_uri:/music/Get It Now.mp3 kind:{audio=pcm(stereo)} major_brand:isom minor_version:512 on_air:2026/06/09 11:50:51 on_air_timestamp:1781005851.00 rid:25 source:music status:playing temporary:false]
+Filename: /music/Get It Now.mp3
+State: playing
+Server starting on :8080
+Server starting on :8080
+TRACK STARTED CALLED POST
+Parsed metadata: map[compatible_brands:isommp42 decoder:ffmpeg encoder:Lavf60.16.100 encoding:Lavf60.16.100 filename:/music/Sete De Noi x Desert Rain (Adrian Sasca Remix).mp3 initial_uri:/music/Sete De Noi x Desert Rain (Adrian Sasca Remix).mp3 kind:{audio=pcm(stereo)} major_brand:mp42 minor_version:0 on_air:2026/06/09 11:55:50 on_air_timestamp:1781006150.00 rid:26 source:music status:playing temporary:false]
+Filename: /music/Sete De Noi x Desert Rain (Adrian Sasca Remix).mp3
+State: playing
+Halfway - locking votes in 10s
+Vote result: like
+State: selecting
+Triggering pipeline, vote was: like
+TRACK STARTED CALLED POST
+Parsed metadata: map[decoder:ffmpeg encoder:Lavf60.16.100 encoding:Lavf60.16.100 filename:/music/Cartoon, Jéja - On & On (feat. Daniel Levi) ｜ Electronic Pop ｜ NCS - Copyright Free Music [K4DyBUG242c].mp3 initial_uri:/music/Cartoon, Jéja - On & On (feat. Daniel Levi) ｜ Electronic Pop ｜ NCS - Copyright Free Music [K4DyBUG242c].mp3 kind:{audio=pcm(stereo)} on_air:2026/06/09 11:58:53 on_air_timestamp:1781006333.00 rid:27 source:music status:playing temporary:false]
+Filename: /music/Cartoon, Jéja - On & On (feat. Daniel Levi) ｜ Electronic Pop ｜ NCS - Copyright Free Music [K4DyBUG242c].mp3
+State: playing
+Halfway - locking votes in 10s
+Vote result: like
+State: selecting
+Triggering pipeline, vote was: like
+TRACK STARTED CALLED POST
+Parsed metadata: map[compatible_brands:iso6mp41 decoder:ffmpeg encoder:Lavf58.29.100 encoding:Lavf58.29.100 filename:/music/Fly Project - Musica Official Music Video.mp3 initial_uri:/music/Fly Project - Musica Official Music Video.mp3 kind:{audio=pcm(stereo)} major_brand:dash minor_version:0 on_air:2026/06/09 12:02:21 on_air_timestamp:1781006541.00 rid:28 source:music status:playing temporary:false]
+Filename: /music/Fly Project - Musica Official Music Video.mp3
+State: playing
+Halfway - locking votes in 10s
+Vote result: like
+State: selecting
+Triggering pipeline, vote was: like
+TRACK STARTED CALLED POST
+Parsed metadata: map[compatible_brands:mp41avc1 creation_time:2025-11-25T10:54:37.000000Z decoder:ffmpeg encoder:vlc 3.0.21 stream output encoder-eng:vlc 3.0.21 stream output filename:/music/Krieger - And One [ZTMlVTyFCKw].mp3 handler_name:SoundHandler initial_uri:/music/Krieger - And One [ZTMlVTyFCKw].mp3 kind:{audio=pcm(stereo)} language:eng major_brand:isom minor_version:0 on_air:2026/06/09 12:06:03 on_air_timestamp:1781006763.00 rid:29 source:music status:playing temporary:false vendor_id:[0][0][0][0]]
+Filename: /music/Krieger - And One [ZTMlVTyFCKw].mp3
+State: playing
+Halfway - locking votes in 10s
+Vote result: like
+State: selecting
+Triggering pipeline, vote was: like
+TRACK STARTED CALLED POST
+Parsed metadata: map[artist:Artist Name compatible_brands:iso6mp41 decoder:ffmpeg encoder:Lavf58.29.100 encoding:Lavf58.29.100 filename:/music/SABATON - Primo Victoria (Official Music Video).mp3 initial_uri:/music/SABATON - Primo Victoria (Official Music Video).mp3 kind:{audio=pcm(stereo)} major_brand:dash minor_version:0 on_air:2026/06/09 12:06:27 on_air_timestamp:1781006787.00 rid:30 source:music status:playing temporary:false title:Song Title]
+Filename: /music/SABATON - Primo Victoria (Official Music Video).mp3
+State: playing
+Halfway - locking votes in 10s
+Vote result: like
+Server starting on :8080
+TRACK STARTED CALLED POST
+Parsed metadata: map[compatible_brands:isommp42 decoder:ffmpeg encoder:Lavf58.29.100 encoding:Lavf58.29.100 filename:/music/Akcent - That's My Name (Ultra Music).mp3 initial_uri:/music/Akcent - That's My Name (Ultra Music).mp3 kind:{audio=pcm(stereo)} major_brand:mp42 minor_version:0 on_air:2026/06/09 12:10:15 on_air_timestamp:1781007015.00 rid:31 source:music status:playing temporary:false]
+Filename: /music/Akcent - That's My Name (Ultra Music).mp3
+State: playing
+Halfway - locking votes in 10s
+Vote result: like
+Server starting on :8080
+TRACK STARTED CALLED POST
+Parsed metadata: map[album:Music to Go Postal By artist:Ph8 comment:http://www.gog.com copyright:© 2006 Running With Scissors decoder:ffmpeg filename:/music/02 In Your Time Of Sorrow.mp3 genre:0 initial_uri:/music/02 In Your Time Of Sorrow.mp3 kind:{audio=pcm(stereo)} label:Running With Scissors on_air:2026/06/09 12:17:53 on_air_timestamp:1781007473.00 publisher:Running With Scissors rid:33 source:music status:playing temporary:false title:In Your Time Of Sorrow tracknumber:2/14 year:2006]
+Filename: /music/02 In Your Time Of Sorrow.mp3
+State: playing
+Halfway - locking votes in 10s
+Vote result: like
+State: selecting
+Triggering pipeline, vote was: like
+State: generating
+TRACK STARTED CALLED POST
+Parsed metadata: map[compatible_brands:isommp42 decoder:ffmpeg encoder:Lavf58.29.100 encoding:Lavf58.29.100 filename:/music/DJ Antoine vs Timati feat. Kalenna - Welcome to St. Tropez (DJ Antoine vs Mad Mark Remix) [Lyrics].mp3 initial_uri:/music/DJ Antoine vs Timati feat. Kalenna - Welcome to St. Tropez (DJ Antoine vs Mad Mark Remix) [Lyrics].mp3 kind:{audio=pcm(stereo)} major_brand:mp42 minor_version:0 on_air:2026/06/09 12:22:12 on_air_timestamp:1781007732.00 rid:34 source:music status:playing temporary:false]
+Filename: /music/DJ Antoine vs Timati feat. Kalenna - Welcome to St. Tropez (DJ Antoine vs Mad Mark Remix) [Lyrics].mp3
+State: playing
+Halfway - locking votes in 10s
+Vote result: like
+State: selecting
+Triggering pipeline, vote was: like
+State: generating
+Server starting on :8080
+Server starting on :8080
+Server starting on :8080
+TRACK STARTED CALLED POST
+Filename: 
+song not found in db: sql: no rows in result set
+TRACK STARTED CALLED POST
+Filename: /music/Fly Project - Musica Official Music Video.mp3
+State: playing

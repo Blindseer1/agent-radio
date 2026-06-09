@@ -1316,3 +1316,138 @@
 2026/06/09 07:48:38 [threads:3] Shutting down scheduler...
 2026/06/09 07:48:38 [threads:3] Scheduler shut down.
 2026/06/09 07:48:38 [main:3] Cleaning downloaded files...
+At radio.liq, line 16, char 45-61:
+queue = input.harbor("next", port=7000, auth=fun(_,_) -> true)
+
+Error 5: this value has type
+  ('A, ...) -> _
+but it should be a subtype of the type of the value at extra/telnet.liq, line 104, char 26-47
+  ((...) -> _)?
+At radio.liq, line 16, char 45-61:
+queue = input.harbor("next", port=7000, auth=fun(_,_) -> true)
+
+Error 5: this value has type
+  ('A, ...) -> _
+but it should be a subtype of the type of the value at extra/telnet.liq, line 104, char 26-47
+  ((...) -> _)?
+At radio.liq, line 28, char 27-30:
+      http.response(status=200, headers=[("Content-Type", "text/plain")], data="ok")
+
+Error 6: Cannot apply that parameter because the function at radio.liq, line 28, char 6-84
+has no argument labeled "status"!
+At radio.liq, line 28, char 27-30:
+      http.response(status=200, headers=[("Content-Type", "text/plain")], data="ok")
+
+Error 6: Cannot apply that parameter because the function at radio.liq, line 28, char 6-84
+has no argument labeled "status"!
+At radio.liq, line 22, char 6-13:
+  uri="/next",
+
+Error 6: Cannot apply that parameter because the function at radio.liq, line 19 char 0 - line 30 char 1
+has no argument labeled "uri"!
+At radio.liq, line 22, char 6-13:
+  uri="/next",
+
+Error 6: Cannot apply that parameter because the function at radio.liq, line 19 char 0 - line 30 char 1
+has no argument labeled "uri"!
+At radio.liq, line 22, char 6-13:
+  uri="/next",
+
+Error 6: Cannot apply that parameter because the function at radio.liq, line 19 char 0 - line 30 char 1
+has no argument labeled "uri"!
+At radio.liq, line 27, char 56-68:
+harbor.http.register(port=7000, method="POST", "/next", next_handler)
+
+Error 5: this value has type
+  (_.{body : _, create : _}, ...) -> _ (inferred at radio.liq, line 19 char 0 - line 25 char 3)
+but it should be a subtype of the type of the value at http.liq, line 391, char 71-78
+  (
+   {
+     body : _,
+     data : (?timeout : float) -> string,
+     headers : [string * string],
+     http_version : string,
+     method : string,
+     path : string,
+     query : [string * string]
+   }, ...) -> _ (inferred at http.liq, line 364, char 45-53)
+At radio.liq, line 27, char 56-68:
+harbor.http.register(port=7000, method="POST", "/next", next_handler)
+
+Error 5: this value has type
+  (_.{body : _, create : _}, ...) -> _ (inferred at radio.liq, line 19 char 0 - line 25 char 3)
+but it should be a subtype of the type of the value at http.liq, line 391, char 71-78
+  (
+   {
+     body : _,
+     data : (?timeout : float) -> string,
+     headers : [string * string],
+     http_version : string,
+     method : string,
+     path : string,
+     query : [string * string]
+   }, ...) -> _ (inferred at http.liq, line 364, char 45-53)
+At radio.liq, line 27, char 56-68:
+harbor.http.register(port=7000, method="POST", "/next", next_handler)
+
+Error 5: this value has type
+  (_.{body : _, create : _}, ...) -> _ (inferred at radio.liq, line 19 char 0 - line 25 char 3)
+but it should be a subtype of the type of the value at http.liq, line 391, char 71-78
+  (
+   {
+     body : _,
+     data : (?timeout : float) -> string,
+     headers : [string * string],
+     http_version : string,
+     method : string,
+     path : string,
+     query : [string * string]
+   }, ...) -> _ (inferred at http.liq, line 364, char 45-53)
+2026/06/09 12:49:51 >>> LOG START
+2026/06/09 12:49:41 [ffmpeg.filter.bitstream:3] No valid mode found for filter pgs_frame_merge!
+2026/06/09 12:49:41 [main:3] Liquidsoap 2.2.4-1+dev
+2026/06/09 12:49:41 [main:3] Using: alsa=0.3.0 angstrom=0.16.0 ao=0.2.4 bigarray=[distributed with Ocaml] bigstringaf=0.9.1 bjack=0.1.6 bytes=[distributed with OCaml 4.02 or above] camlimages.all_formats=4.2.6 camlimages.core=5.0.4 camlimages.exif=5.0.4 camlimages.gif=5.0.4 camlimages.jpeg=5.0.4 camlimages.png=5.0.4 camlimages.tiff=5.0.4 camlimages.xpm=5.0.4 camlp-streams camomile.lib=2.0 cry=1.0.3 curl=0.9.2 dssi=0.1.5 dtools=0.4.5 dune-build-info=3.14.0 dune-private-libs.dune-section=3.14.0 dune-site=3.14.0 dune-site.private=3.14.0 duppy=0.9.4 faad=0.5.1 ffmpeg-av=1.1.11 ffmpeg-avcodec=1.1.11 ffmpeg-avdevice=1.1.11 ffmpeg-avfilter=1.1.11 ffmpeg-avutil=1.1.11 ffmpeg-swresample=1.1.11 ffmpeg-swscale=1.1.11 fileutils flac=0.5.0 flac.decoder=0.5.0 flac.ogg=0.5.0 frei0r=0.1.2 gd=0.5.1 gen=1.1 graphics=5.1.2 inotify=2.0-62-g5e58536 ladspa=0.2.2 lame=0.3.7 liquidsoap-lang=2.2.4-1 liquidsoap-lang.console=2.2.4-1 liquidsoap_alsa liquidsoap_ao liquidsoap_bjack liquidsoap_builtins liquidsoap_camlimages liquidsoap_core liquidsoap_dssi liquidsoap_faad liquidsoap_ffmpeg liquidsoap_flac liquidsoap_frei0r liquidsoap_gd liquidsoap_graphics liquidsoap_ladspa liquidsoap_lame liquidsoap_lo liquidsoap_mad liquidsoap_ogg liquidsoap_ogg_flac liquidsoap_optionals liquidsoap_opus liquidsoap_oss liquidsoap_portaudio liquidsoap_pulseaudio liquidsoap_runtime liquidsoap_samplerate liquidsoap_shine liquidsoap_soundtouch liquidsoap_speex liquidsoap_ssl liquidsoap_taglib liquidsoap_theora liquidsoap_vorbis liquidsoap_xmlplaylist lo=0.2.0 mad=0.5.2 magic-mime=1.3.1 menhirLib=20231231 metadata=0.3.0 mm=0.8.5 mm.audio=0.8.5 mm.base=0.8.5 mm.image=0.8.5 mm.midi=0.8.5 mm.video=0.8.5 ogg=0.7.4 ogg.decoder=0.7.4 opus=0.2.2 opus.decoder=0.2.2 pcre=7.5.0 portaudio=0.2.3 pulseaudio=0.1.5 re=1.11.0 samplerate=0.1.6 sedlex=3.2 seq=[distributed with OCaml 4.07 or above] shine=0.2.3 soundtouch=0.1.9 speex=0.4.1 speex.decoder=0.4.1 ssl=0.7.0 stdlib-shims=[distributed with OCaml 4.07 or above] str=[distributed with Ocaml] stringext=1.6.0 syslog=2.0.2 taglib=0.3.10 theora=0.4.0 theora.decoder=0.4.0 threads=[distributed with Ocaml] threads.posix=[internal] unix=[distributed with Ocaml] uri=4.4.0 vorbis=0.8.0 vorbis.decoder=0.8.0 xmlm=1.4.0 xmlplaylist=0.1.5
+2026/06/09 12:49:41 [clock:3] Using builtin (low-precision) implementation for latency control
+2026/06/09 12:49:50 [main:3] Standard library loaded in 8.57 seconds.
+2026/06/09 12:49:51 [frame:3] Using 44100Hz audio, 25Hz video, 44100Hz main.
+2026/06/09 12:49:51 [frame:3] Video frame size set to: 1280x720
+2026/06/09 12:49:51 [frame:3] Frame size must be a multiple of 1764 ticks = 1764 audio samples = 1 video samples.
+2026/06/09 12:49:51 [frame:3] Targeting 'frame.duration': 0.04s = 1764 audio samples = 1764 ticks.
+2026/06/09 12:49:51 [frame:3] Frames last 0.04s = 1764 audio samples = 1 video samples = 1764 ticks.
+2026/06/09 12:49:51 [sandbox:3] Could not find binary bwrap, disabling sandboxing.
+2026/06/09 12:49:51 [startup:3] DSSI plugins registration: 0.00s
+2026/06/09 12:49:51 [startup:3] FFmpeg filters registration: 0.04s
+2026/06/09 12:49:51 [startup:3] FFmpeg bitstream filters registration: 0.00s
+2026/06/09 12:49:51 [startup:3] Frei0r plugin registration: 0.00s
+2026/06/09 12:49:51 [startup:3] LADSPA plugins registration: 0.00s
+2026/06/09 12:49:51 [startup:3] Typechecking: 8.07s
+2026/06/09 12:49:51 [startup:3] Evaluation: 0.03s
+2026/06/09 12:49:51 [startup:3] Typechecking: 0.08s
+2026/06/09 12:49:51 [startup:3] Evaluation: 0.01s
+2026/06/09 12:49:51 [startup:3] Typechecking: 0.01s
+2026/06/09 12:49:51 [startup:3] Evaluation: 0.00s
+2026/06/09 12:49:51 [startup:3] Loaded radio.liq: 0.01s
+2026/06/09 12:49:51 [/radio:3] Content type is {audio=pcm(stereo)}.
+2026/06/09 12:49:51 [music:3] Content type is {audio=pcm(stereo)}.
+2026/06/09 12:49:51 [safe_blank:3] Content type is {audio=pcm(stereo)}.
+2026/06/09 12:49:51 [video.converter:3] Using preferred video converter: ffmpeg.
+2026/06/09 12:49:51 [audio.converter:3] Using samplerate converter: libsamplerate.
+2026/06/09 12:49:51 [clock.main:3] Streaming loop starts in auto-sync mode
+2026/06/09 12:49:51 [clock.main:3] Delegating synchronization to CPU clock
+2026/06/09 12:49:51 [video.text:3] Using gd implementation
+2026/06/09 12:49:51 [decoder.ffmpeg:3] Requested content-type for "/music/Fly Project - Musica Official Music Video.mp3": {audio=pcm(stereo)}
+2026/06/09 12:49:51 [decoder.ffmpeg:3] FFmpeg recognizes "/music/Fly Project - Musica Official Music Video.mp3" as audio: {codec: mp3, 44100Hz, 2 channel(s)}
+2026/06/09 12:49:51 [decoder.ffmpeg:3] Decoded content-type for "/music/Fly Project - Musica Official Music Video.mp3": {audio=pcm(stereo)}
+2026/06/09 12:49:51 [mksafe:3] Switch to safe_blank.
+2026/06/09 12:49:51 [music:3] Prepared "/music/Fly Project - Musica Official Music Video.mp3" (RID 0).
+2026/06/09 12:49:51 [mksafe:3] Switch to music with transition.
+2026/06/09 12:49:51 [/radio:3] Connecting mount /radio for source@localhost...
+2026/06/09 12:49:51 [/radio:3] Connection setup was successful.
+[mp3float @ 0x74ac00021300] Could not update timestamps for skipped samples.
+[mov,mp4,m4a,3gp,3g2,mj2 @ 0x74abf80050c0] st: 0 edit list: 1 Missing key frame while searching for timestamp: 0
+[mov,mp4,m4a,3gp,3g2,mj2 @ 0x74abf80050c0] st: 0 edit list 1 Cannot find an index entry before timestamp: 0.
+2026/06/09 12:49:51 [decoder.ffmpeg:3] Requested content-type for "/music/Krieger - And One [ZTMlVTyFCKw].mp3": {audio=pcm(stereo)}
+2026/06/09 12:49:51 [decoder.ffmpeg:3] FFmpeg recognizes "/music/Krieger - And One [ZTMlVTyFCKw].mp3" as audio: {codec: mp3, 44100Hz, 2 channel(s)}, video: {codec: h264, 640x480, yuv420p}
+2026/06/09 12:49:51 [decoder.ffmpeg:3] Decoded content-type for "/music/Krieger - And One [ZTMlVTyFCKw].mp3": {audio=pcm(stereo)}
+[mov,mp4,m4a,3gp,3g2,mj2 @ 0x74abf80050c0] st: 0 edit list: 1 Missing key frame while searching for timestamp: 0
+[mov,mp4,m4a,3gp,3g2,mj2 @ 0x74abf80050c0] st: 0 edit list 1 Cannot find an index entry before timestamp: 0.

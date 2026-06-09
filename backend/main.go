@@ -210,7 +210,6 @@ func main() {
 			}
 		}
 
-		fmt.Println("Parsed metadata:", metadata)
 		fp := metadata["filename"]
 		fmt.Println("Filename:", fp)
 
@@ -220,7 +219,8 @@ func main() {
 		voteMutex.Unlock()
 
 		var duration float64
-		err := db.QueryRow("SELECT duration FROM songs WHERE filepath = ?", fp).Scan(&duration)
+		var currentMood string
+		err := db.QueryRow("SELECT duration, mood_label FROM songs WHERE filepath = ?", fp).Scan(&duration, &currentMood)
 		if err != nil {
 			fmt.Println("song not found in db:", err)
 			w.WriteHeader(http.StatusOK)
@@ -236,19 +236,43 @@ func main() {
 			time.Sleep(half)
 			fmt.Println("Halfway - locking votes in 10s")
 			time.Sleep(10 * time.Second)
+
 			voteMutex.Lock()
 			voteResult := "like"
 			if voteNo > voteYes {
 				voteResult = "dislike"
 			}
 			voteMutex.Unlock()
-			fmt.Println("Vote result:", result)
+			fmt.Println("Vote result:", voteResult)
+
 			remaining := time.Duration(duration)*time.Second - time.Since(songStart) - 45*time.Second
 			if remaining > 0 {
 				time.Sleep(remaining)
 			}
+
 			setState(Selecting)
-			fmt.Println("Triggering pipeline, vote was:", result)
+			fmt.Println("Triggering pipeline, vote was:", voteResult)
+
+			candidates, err := getCandidates(db, fp, currentMood)
+			if err != nil || len(candidates) == 0 {
+				fmt.Println("no candidates found:", err)
+				return
+			}
+
+			candidatesJSON, _ := json.Marshal(candidates)
+			directorPrompt := fmt.Sprintf(`You are a radio DJ director. Pick the next song to play.
+Current song: %s
+Listener vote: %s
+Candidates: %s
+Respond ONLY with valid JSON: {"choice": "<filepath>", "reason": "<why>"}`, fp, voteResult, string(candidatesJSON))
+
+			setState(Generating)
+			response, err := callOllama(directorPrompt, "qwen3:8b")
+			if err != nil {
+				fmt.Println("ollama error:", err)
+				return
+			}
+			fmt.Println("Director response:", response)
 		}()
 
 		w.WriteHeader(http.StatusOK)
