@@ -96,6 +96,57 @@ func saveToDB(db *sql.DB, filePath string, metadata map[string]interface{}) erro
 	return err
 }
 
+func getCandidates(db *sql.DB, currentFile string, currentMood string) ([]map[string]interface{}, error) {
+	// 4 similar songs
+	similar, err := db.Query(`
+		SELECT filepath, title, bpm, mood_label
+		FROM songs
+		WHERE filepath != ?
+		AND mood_label = ?
+		AND id NOT IN (SELECT song_id FROM play_history ORDER BY played_at DESC LIMIT 10)
+		LIMIT 4
+	`, currentFile, currentMood)
+	if err != nil {
+		return nil, err
+	}
+	defer similar.Close()
+
+	var candidates []map[string]interface{}
+	for similar.Next() {
+		var fp, title, mood string
+		var bpm float64
+		similar.Scan(&fp, &title, &bpm, &mood)
+		candidates = append(candidates, map[string]interface{}{
+			"filepath": fp, "title": title, "bpm": bpm, "mood": mood,
+		})
+	}
+
+	// 2 different songs
+	different, err := db.Query(`
+		SELECT filepath, title, bpm, mood_label
+		FROM songs
+		WHERE filepath != ?
+		AND mood_label != ?
+		AND id NOT IN (SELECT song_id FROM play_history ORDER BY played_at DESC LIMIT 10)
+		LIMIT 2
+	`, currentFile, currentMood)
+	if err != nil {
+		return nil, err
+	}
+	defer different.Close()
+
+	for different.Next() {
+		var fp, title, mood string
+		var bpm float64
+		different.Scan(&fp, &title, &bpm, &mood)
+		candidates = append(candidates, map[string]interface{}{
+			"filepath": fp, "title": title, "bpm": bpm, "mood": mood,
+		})
+	}
+
+	return candidates, nil
+}
+
 func main() {
 	db, err := sql.Open("sqlite3", "/root/agent-radio/librarian/radio_library.db")
 	if err != nil {
@@ -186,9 +237,9 @@ func main() {
 			fmt.Println("Halfway - locking votes in 10s")
 			time.Sleep(10 * time.Second)
 			voteMutex.Lock()
-			result := "like"
+			voteResult := "like"
 			if voteNo > voteYes {
-				result = "dislike"
+				voteResult = "dislike"
 			}
 			voteMutex.Unlock()
 			fmt.Println("Vote result:", result)
