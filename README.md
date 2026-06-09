@@ -37,7 +37,7 @@ If any step in the pipeline is too slow or fails, the system falls back to a dir
 | Text-to-Speech | Chatterbox TTS |
 | Stream Engine | Liquidsoap |
 | Stream Server | Icecast2 |
-| Frontend | HTMX + SSE |
+| Frontend | React + SSE |
 
 ---
 
