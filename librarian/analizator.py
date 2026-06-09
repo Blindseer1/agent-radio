@@ -1,4 +1,5 @@
 import librosa
+import os
 import numpy as np
 import sys
 import json
@@ -64,7 +65,7 @@ def preprocess_and_analyze(file_path):
         rezultat = {
             "status": "success",
             "file_info": {
-                "title": tag.title if tag.title else "Unknown",
+                "title": tag.title if tag.title else os.path.splitext(os.path.basename(file_path))[0],
                 "artist": tag.artist if tag.artist else "Unknown",
                 "duration_sec": round(duration, 2)
             },
