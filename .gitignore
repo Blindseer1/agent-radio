@@ -5,3 +5,5 @@ backend/backend
 *.out
 librarian/__pycache__
 librarian/*.db
+digitaloceankey
+librarian/cerere.sql
