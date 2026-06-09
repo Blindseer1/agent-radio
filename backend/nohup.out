@@ -1241,3 +1241,55 @@ song not found in db: sql: no rows in result set
 TRACK STARTED CALLED POST
 Filename: /music/Fly Project - Musica Official Music Video.mp3
 State: playing
+Halfway - locking votes in 10s
+Vote result: like
+State: selecting
+Triggering pipeline, vote was: like
+State: generating
+TRACK STARTED CALLED POST
+Filename: /music/Krieger - And One [ZTMlVTyFCKw].mp3
+State: playing
+Halfway - locking votes in 10s
+Vote result: like
+State: selecting
+Triggering pipeline, vote was: like
+State: generating
+TRACK STARTED CALLED POST
+Filename: /music/Cartoon, Jéja - On & On (feat. Daniel Levi) ｜ Electronic Pop ｜ NCS - Copyright Free Music [K4DyBUG242c].mp3
+State: playing
+Halfway - locking votes in 10s
+Vote result: like
+State: selecting
+Triggering pipeline, vote was: like
+State: generating
+Director response: {"choice":"/music/Mike Posner - I Took A Pill In Ibiza (Seeb Remix) (Explicit).mp3","reason":"Maintains the energetic, upbeat vibe of the current song while offering a popular remix that aligns with listener preferences for high-tempo, dance-friendly tracks."}
+TRACK STARTED CALLED POST
+Filename: /music/SABATON - Primo Victoria (Official Music Video).mp3
+State: playing
+Halfway - locking votes in 10s
+Vote result: like
+State: selecting
+Triggering pipeline, vote was: like
+State: generating
+TRACK STARTED CALLED POST
+Filename: /music/Sete De Noi x Desert Rain (Adrian Sasca Remix).mp3
+State: playing
+Halfway - locking votes in 10s
+Vote result: like
+State: selecting
+Triggering pipeline, vote was: like
+State: generating
+TRACK STARTED CALLED POST
+Filename: /music/02 In Your Time Of Sorrow.mp3
+State: playing
+Director response: {"choice":"/music/The Prodigy - Get Your Fight On.mp3","reason":"The Prodigy's high-energy track with a BPM of 172.3 provides a dynamic contrast to the current song, matching the listener's 'like' vote with an exciting, upbeat transition."}
+Halfway - locking votes in 10s
+Vote result: like
+State: selecting
+Triggering pipeline, vote was: like
+State: generating
+TRACK STARTED CALLED POST
+Filename: /music/Solo Leveling EP 6 OST FULL ＂DARK ARIA ＜LV2＞＂ by SawanoHiroyuki[nZk]：XAI (Lyrics) [WczSfh3gJaU].mp3
+State: playing
+Halfway - locking votes in 10s
+Vote result: like

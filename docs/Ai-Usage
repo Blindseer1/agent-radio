@@ -1,0 +1,196 @@
+# Arhitectura AI: Post de Radio Autonom (24/7)
+
+Am implementat o arhitectură inteligentă de tip **sistem multi-agent**, în care mai multe modele AI lucrează în echipă pentru a gestiona un post de radio complet autonom. 
+
+Concret, am împărțit „creierul” stației în trei roluri clare, coordonate printr-un pipeline stabil:
+
+* **Agentul Director (AI-ul Analitic - Ollama):** Acesta ia deciziile logice. Analizează BPM-ul, genul și stilul piesei care rulează și alege din baza de date (fișierele JSON) o melodie compatibilă pentru o tranziție perfectă. Trucul meu tehnic aici a fost să forțez modelul să returneze datele strict în format valid JSON (`"format": "json"`), evitând astfel erorile de procesare în cod.
+* **Agentul DJ (AI-ul Creativ - Ollama):** Preia detaliile noii piese de la Director și scrie pe loc un text de prezentare scurt și energic. Prin injectarea dinamică a variabilelor în prompt (titlu, artist, gen), anunțurile generate sunt mereu unice și relevante, nu repetitive.
+* **Chatterbox (AI-ul Vocal - TTS):** Reprezintă rețeaua neurală finală, care transformă textul creativ al DJ-ului în voce (audio) gata de difuzare.
+
+---
+
+> **Cum funcționează per ansamblu:** > Scriptul meu Python acționează ca „managerul” care orchestrează totul într-o buclă infinită. Așteaptă să se termine o piesă, declanșează **Directorul** ➔ apoi **DJ-ul** ➔ apoi **Vocea** ➔ dă play și reia ciclul. Prin separarea clară a logicii (Directorul) de latura creativă (DJ-ul), am creat un sistem extrem de stabil, care funcționează continuu fără să dea crash.
+
+# Rezumat Tehnic: Dezvoltare Frontend - AI DJ Radio Console
+
+Acest document reflectă exclusiv structura, designul și logica de interfață (frontend) dezvoltate și optimizate pentru fișierul `Radio.html`.
+
+---
+
+## 1. Tehnologii Utilizate în Frontend
+* **HTML5 & React:** Structura de bază și scripturi dedicate pentru calcularea progresului și gestionarea notificărilor.
+* **Tailwind CSS:** Stilul vizual aplicat direct prin clase utilitare (design modern, dark mode, margini finisate și efecte de transparență).
+
+---
+
+## 2. Structura și Componentele Interfeței (Radio.html)
+
+Pagina este construită ca o structură fluidă (Responsive Grid), adaptabilă pe mobil și desktop, fiind împărțită în următoarele zone:
+
+### A. Zona de Header (Navigație & Status)
+* Conține titlul aplicației (`RADIO AI LOCAL v1.0 Beta`) cu un gradient de culoare modern.
+* Include o bulină verde animată (`ai-pulse`) care indică vizual utilizatorului starea conexiunii cu inteligența artificială.
+
+### B. Zona Stream Audio (Icecast Player)
+* **Tag-ul `<audio>`:** Configurat să citească direct fluxul audio live.
+* **Efect de Rotație la Hover:** Caseta pictogramei radio (`📻`) a fost echipată cu o animație fluidă din Tailwind (`transition-transform duration-700 ease-in-out`). Atunci când utilizatorul trece cu mouse-ul peste întregul card, pictograma execută o rotație completă de 360 de grade.
+
+### C. Consola de Gândire (Ollama Thinking Process)
+* Stilizată ca un terminal de cod neagră cu efect retro de monitor vechi (`scanline`) și text verde-neon.
+* **Integrare SSE:** Folosește atributul `hx-ext="sse"` și ascultă evenimentul `thoughts`. Este configurată să primească text în flux continuu și să îl afișeze dinamic.
+
+### D. Zona de Încărcare (Upload Form & Progress)
+* **Zona de Drop/Select:** Un dreptunghi mare cu margini întrerupte care își schimbă culoarea la hover. Include un script care afișează instant numele fișierului selectat.
+* **Bara de Progres:** Un element albastru poziționat sub zona de încărcare. Un script JS interceptat prin HTMX (`htmx:xhr:progress`) calculează procentajul exact al fișierului în timpul trimiterii și extinde lățimea bării de la 0% la 100%.
+
+### E. Sistemul de Confirmare (Toast Notification)
+* Un element fix în colțul din dreapta-sus, ascuns inițial în afara ecranului.
+* Folosește un ascultător de evenimente (`htmx:afterRequest`). În momentul exact în care upload-ul s-a terminat cu succes, notificarea verde glisează elegant pe ecran, anunțând utilizatorul că fișierul a fost adăugat. După 4 secunde, notificarea dispare automat, iar bara albastră de progres se resetează la 0%.
+
+### F. Zona de Metadate (SQLite Target)
+* Un spațiu dedicat care afișează o stare de așteptare neutră.
+* Este conectat la fluxul SSE (`sse-swap="metadata"`) și configurat să își înlocuiască automat conținutul cu datele finale (BPM, Mood, Gen) imediat ce acestea sunt transmise.
+
+---
+
+## 3. Ticketele de Frontend Finalizate (PROJ / T1)
+
+* **T1-01 (PROJ-34):** Configurat scheletul HTML cu HTMX și extensia SSE. ✅
+* **T1-02 (PROJ-35):** Creat tag-ul audio cu legătură directă către stream. ✅
+* **T1-03 (PROJ-36):** Implementat conexiunea nativă prin SSE. ✅
+* **T1-04 (PROJ-37):** Construit formularul de upload cu bară de progres funcțională. ✅
+* **T1-05 (PROJ-38):** Creat panoul tip consolă pentru gândurile AI. ✅
+* **T1-08 (PROJ-41):** Asigurat logica de reconectare automată prin SSE. ✅
+* **T1-10 (PROJ-43):** Finalizat stilizarea responsive (Desktop/Mobil). ✅
+
+
+
+# Backend 
+
+Now that we have the actual main.go file, the architecture makes complete sense! This backend acts as a brilliant orchestrator, seamlessly tying together real-time streaming, automated audio analysis, and an LLM-driven radio program director.
+
+Here is exactly how AI is integrated into this code, along with how you used AI externally to get this server up and running.
+1. How AI is Used Within this Go Code
+
+The backend treats AI both as a deterministic audio engineer and an intelligent radio programming director.
+A. The Audio Engineer: Automated Song Profiling
+
+When a user uploads a track via the /upload endpoint, your Go server doesn't just save the file—it immediately schedules it for automated AI analysis:
+Go
+
+result, err := analyzeAudio("/music/" + header.Filename)
+
+    How it works: The analyzeAudio function triggers an external Python script (analizator.py) using Go's os/exec.
+
+    The AI's payload: This Python script uses audio machine learning models to extract complex metadata: bpm, energy, brightness, danceability, and critically, a semantic mood_label (e.g., "Energetic", "Chill").
+
+    The outcome: Go decodes this JSON output and logs it straight into SQLite, establishing the foundation for the AI to make intelligent decisions later.
+
+B. The Radio Director: Real-Time LLM Program Curation
+
+The core AI engine lives inside a background goroutine triggered by the /track-started endpoint. This is where your application transitions into an autonomous agent loop:
+
+    Democratic Feedback Collection: While a song is Playing, the system collects listener upvotes and downvotes.
+
+    Context-Aware Candidate Selection (getCandidates): When the song passes the halfway mark, the system queries the SQLite database to fetch candidate tracks: 4 matching the current track's mood, and 2 wildcards with a different mood to keep things interesting.
+
+    Prompt Engineering & System Roleplaying: Go compiles all of this runtime data into a highly structured prompt, assigning a specific persona to the local LLM:
+    Go
+
+    directorPrompt := fmt.Sprintf(`You are a radio DJ director. Pick the next song to play.
+    Current song: %s
+    Listener vote: %s
+    Candidates: %s
+    Respond ONLY with valid JSON: {"choice": "<filepath>", "reason": "<why>"}`, ...)
+
+    Local LLM Execution via Ollama: The app changes its state to Generating and dispatches a JSON payload via an HTTP POST request to a locally hosted instance of Ollama (http://localhost:11434/api/generate), running the qwen3:8b model.
+
+    Autonomous Decision Making: The model reads the listener sentiment, looks at the metadata of the candidate tracks, intelligently selects the next song path, explains its logic, and returns a raw JSON response directly to your Go runtime.
+
+2. How You Used AI to Run Commands and Setup the Server
+
+Looking at the file paths, structural design, and environment clues in this code, it is clear how you leveraged an AI coding companion (like ChatGPT, Claude, or a terminal agent) to configure the environment and write your scripts.
+A. Writing Complex, Non-Blocking Go Routines
+
+Writing concurrent code in Go that relies on precise timing (time.Sleep) while managing mutex locks (voteMutex) can easily cause race conditions or deadlocks. You likely used an AI assistant to:
+
+    Handle the background pipeline using a non-blocking anonymous goroutine (go func() { ... }()) so the web server doesn't freeze while waiting for the song to finish or the LLM to reply.
+
+    Thread-protect the listener voting mechanism using sync.Mutex safely.
+
+B. Prompt Engineering for Clean JSON Output
+
+LLMs naturally love to chat and explain things using conversational prose. Getting an LLM to reliably return only raw JSON to a backend script is notoriously difficult. You used AI to construct an optimized system prompt containing strict formatting guards (Respond ONLY with valid JSON...), and configured the Go backend to cleanly parse that explicit structure into runtime objects.
+C. Server Environment & Dependency Setup
+
+Your code contains highly specific system paths (/root/agent-radio/... and /music/...). This indicates that you used AI as a DevOps assistant to generate exact shell commands for:
+
+    Setting up the local environment: Writing commands to install Python dependencies required by analizator.py (such as pip install librosa scipy numpy).
+
+    Database Management: Writing the initial SQL schema commands to initialize the SQLite database (radio_library.db) with proper data typing.
+
+    Ollama Deployment: Running background system commands to download, serve, and pull models locally inside your Linux instance:
+    Bash
+
+    curl -fsSL https://ollama.com/install.sh | sh
+    ollama serve &
+    ollama pull qwen3:8b
+
+    Compiling and Launching Go: Helping you manage cross-origin resource sharing (CORS headers) inside HTTP handlers, downloading the SQLite driver (go get github.com/mattn/go-sqlite3), and running the service via go run backend/main.go.
+
+# Librarian 
+
+    Etapa de Analiză (Python - Extracția de Date)
+
+
+Înainte ca AI-ul să poată decide ceva, el are nevoie de o "fișă tehnică" a fiecărei piese.
+
+    Rolul AI-ului: Aici nu folosești LLM, ci procesare de semnal (librosa). Extragi parametri precum BPM, energie, strălucire spectrală și danceability.
+
+    Rezultatul: Fără acești indicatori, AI-ul ar fi "orb". Tu îi oferi vectori numerici pe care LLM-ul îi poate înțelege pentru a face comparații.
+
+    Etapa de Selecție (Go - "Directorul")
+
+
+Aici intervine magia LLM-ului (modelul qwen3 în codul tău).
+
+    Cum l-ai folosit: Trimiți către model un obiect JSON care conține piesa curentă și o listă de 6 candidați sugerați (aleși deja după criterii matematice de proximitate).
+
+    De ce e genial: În loc să lași un algoritm rigid să aleagă mereu piesa cu cel mai apropiat BPM, Directorul AI analizează contextul și "simte" care tranziție ar fi mai fluidă, primind instrucțiuni de tip system prompt (ex: "preferă continuitatea și fii atent la vibe").
+
+    Ieșire: Primești o decizie structurată în JSON care conține nu doar piesa aleasă, ci și motivarea (de ce a ales-o).
+
+    Etapa de Prezentare (Go - "DJ-ul")
+
+
+Odată ce piesa a fost aleasă, trebuie să și suni a radio.
+
+    Rolul AI-ului: Folosești llama3.3 pentru a genera "coul" (vocea de DJ).
+
+    Integrarea: AI-ul primește detalii despre piesă, dar și "notificarea" de la Director. Astfel, DJ-ul știe de ce face tranziția și își adaptează tonul (cald, energic, relaxat) pentru a se mula pe atmosfera piesei.
+
+💡 Observații de student pentru proiectul tău
+
+
+# Sound Tech
+
+1. Arhitectură și Design
+
+    Selectare Stack: AI-ul a validat abordarea lightweight, sugerând HTMX + SSE direct din backend-ul Go.
+
+    Audio Pipeline: A recomandat Unix Sockets pentru latență redusă între Go și Liquidsoap.
+
+    Documentație vizuală: A generat codul Mermaid pentru transformarea rapidă a textului în diagrame editabile în Draw.io.
+
+2. Generare de Cod și Configurații
+
+    Logică Core (Go): A generat structurile de date pentru interogările API către agenții Ollama și boilerplate-ul pentru os/exec.
+
+    Scripting Liquidsoap: A redactat codul de nișă pentru mixajul audio, gestionarea fallback-urilor și inserția de voce TTS.
+
+3. Prompt Engineering și Depanare
+
+    Sistemul de Agenți: A ajutat la rafinarea instrucțiunilor (system prompts) pentru ca agenții locali (Director și DJ) să respecte formatul cerut și să mențină tonul radioului.
+
+    Rezolvare erori (Debugging): A identificat un risc de deadlock la utilizarea Unix Sockets și a depanat deconectările din fluxul SSE către browser.
