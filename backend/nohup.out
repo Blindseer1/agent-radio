@@ -704,3 +704,355 @@ song not found in db: sql: no rows in result set
 2026/06/09 09:34:26 [decoder.ffmpeg:3] FFmpeg recognizes "/music/SABATON - Primo Victoria (Official Music Video).mp3" as audio: {codec: mp3, 44100Hz, 2 channel(s)}
 2026/06/09 09:34:26 [decoder.ffmpeg:3] Decoded content-type for "/music/SABATON - Primo Victoria (Official Music Video).mp3": {audio=pcm(stereo)}
 2026/06/09 09:37:12 [decoder:2] Decoding "/music/07 Burned Feet.mp3" ended: Ffmpeg_decoder.End_of_file.
+2026/06/09 09:37:12 [music:3] Prepared "/music/SABATON - Primo Victoria (Official Music Video).mp3" (RID 14).
+[mp3float @ 0x7ae7700212c0] Could not update timestamps for skipped samples.
+TRACK STARTED CALLED POST
+Track started: map[]
+song not found in db: sql: no rows in result set
+2026/06/09 09:37:12 [decoder.ffmpeg:3] Requested content-type for "/music/DJ Antoine vs Timati feat. Kalenna - Welcome to St. Tropez (DJ Antoine vs Mad Mark Remix) [Lyrics].mp3": {audio=pcm(stereo)}
+2026/06/09 09:37:12 [decoder.ffmpeg:3] FFmpeg recognizes "/music/DJ Antoine vs Timati feat. Kalenna - Welcome to St. Tropez (DJ Antoine vs Mad Mark Remix) [Lyrics].mp3" as audio: {codec: mp3, 44100Hz, 2 channel(s)}
+2026/06/09 09:37:12 [decoder.ffmpeg:3] Decoded content-type for "/music/DJ Antoine vs Timati feat. Kalenna - Welcome to St. Tropez (DJ Antoine vs Mad Mark Remix) [Lyrics].mp3": {audio=pcm(stereo)}
+[mp3float @ 0x7ae7700212c0] Could not update timestamps for discarded samples.
+2026/06/09 09:41:00 [decoder:2] Decoding "/music/SABATON - Primo Victoria (Official Music Video).mp3" ended: Ffmpeg_decoder.End_of_file.
+2026/06/09 09:41:00 [music:3] Prepared "/music/DJ Antoine vs Timati feat. Kalenna - Welcome to St. Tropez (DJ Antoine vs Mad Mark Remix) [Lyrics].mp3" (RID 15).
+[mp3float @ 0x7ae7700212c0] Could not update timestamps for skipped samples.
+TRACK STARTED CALLED POST
+Track started: map[]
+song not found in db: sql: no rows in result set
+2026/06/09 09:41:01 [decoder.ffmpeg:3] Requested content-type for "/music/Three Days Grace - Animal I Have Become [j7rLdd8EiJQ].mp3": {audio=pcm(stereo)}
+2026/06/09 09:41:01 [decoder.ffmpeg:3] FFmpeg recognizes "/music/Three Days Grace - Animal I Have Become [j7rLdd8EiJQ].mp3" as audio: {codec: mp3, 48000Hz, 2 channel(s)}
+2026/06/09 09:41:01 [decoder.ffmpeg:3] Decoded content-type for "/music/Three Days Grace - Animal I Have Become [j7rLdd8EiJQ].mp3": {audio=pcm(stereo)}
+[mp3float @ 0x7ae7700212c0] Could not update timestamps for discarded samples.
+2026/06/09 09:44:42 [decoder:2] Decoding "/music/DJ Antoine vs Timati feat. Kalenna - Welcome to St. Tropez (DJ Antoine vs Mad Mark Remix) [Lyrics].mp3" ended: Ffmpeg_decoder.End_of_file.
+2026/06/09 09:44:42 [music:3] Prepared "/music/Three Days Grace - Animal I Have Become [j7rLdd8EiJQ].mp3" (RID 16).
+[mp3float @ 0x7ae7700212c0] Could not update timestamps for skipped samples.
+TRACK STARTED CALLED POST
+Track started: map[]
+song not found in db: sql: no rows in result set
+[mp3 @ 0x7ae774005040] Estimating duration from bitrate, this may be inaccurate
+2026/06/09 09:44:42 [decoder.ffmpeg:3] Requested content-type for "/music/alec_koff-carnaval-484622.mp3": {audio=pcm(stereo)}
+2026/06/09 09:44:42 [decoder.ffmpeg:3] FFmpeg recognizes "/music/alec_koff-carnaval-484622.mp3" as audio: {codec: mp3, 44100Hz, 2 channel(s)}
+2026/06/09 09:44:42 [decoder.ffmpeg:3] Decoded content-type for "/music/alec_koff-carnaval-484622.mp3": {audio=pcm(stereo)}
+[mp3 @ 0x7ae774005040] Estimating duration from bitrate, this may be inaccurate
+[mp3float @ 0x7ae7700212c0] Could not update timestamps for discarded samples.
+2026/06/09 09:48:33 [decoder:2] Decoding "/music/Three Days Grace - Animal I Have Become [j7rLdd8EiJQ].mp3" ended: Ffmpeg_decoder.End_of_file.
+[mp3 @ 0x7ae770004c80] Estimating duration from bitrate, this may be inaccurate
+[mp3 @ 0x7ae770004c80] Estimating duration from bitrate, this may be inaccurate
+2026/06/09 09:48:34 [music:3] Prepared "/music/alec_koff-carnaval-484622.mp3" (RID 17).
+TRACK STARTED CALLED POST
+Track started: map[]
+song not found in db: sql: no rows in result set
+2026/06/09 09:48:34 [decoder.ffmpeg:3] Requested content-type for "/music/Fly Project - Musica Official Music Video.mp3": {audio=pcm(stereo)}
+2026/06/09 09:48:34 [decoder.ffmpeg:3] FFmpeg recognizes "/music/Fly Project - Musica Official Music Video.mp3" as audio: {codec: mp3, 44100Hz, 2 channel(s)}
+2026/06/09 09:48:34 [decoder.ffmpeg:3] Decoded content-type for "/music/Fly Project - Musica Official Music Video.mp3": {audio=pcm(stereo)}
+2026/06/09 09:49:34 [decoder:2] Decoding "/music/alec_koff-carnaval-484622.mp3" ended: Ffmpeg_decoder.End_of_file.
+2026/06/09 09:49:34 [music:3] Prepared "/music/Fly Project - Musica Official Music Video.mp3" (RID 18).
+[mp3float @ 0x7ae7700212c0] Could not update timestamps for skipped samples.
+TRACK STARTED CALLED POST
+Track started: map[]
+song not found in db: sql: no rows in result set
+2026/06/09 09:49:34 [decoder.ffmpeg:3] Requested content-type for "/music/The Prodigy - Get Your Fight On.mp3": {audio=pcm(stereo)}
+2026/06/09 09:49:34 [decoder.ffmpeg:3] FFmpeg recognizes "/music/The Prodigy - Get Your Fight On.mp3" as audio: {codec: mp3, 44100Hz, 2 channel(s)}
+2026/06/09 09:49:34 [decoder.ffmpeg:3] Decoded content-type for "/music/The Prodigy - Get Your Fight On.mp3": {audio=pcm(stereo)}
+[mp3float @ 0x7ae7700212c0] Could not update timestamps for discarded samples.
+2026/06/09 09:53:16 [decoder:2] Decoding "/music/Fly Project - Musica Official Music Video.mp3" ended: Ffmpeg_decoder.End_of_file.
+2026/06/09 09:53:16 [music:3] Prepared "/music/The Prodigy - Get Your Fight On.mp3" (RID 19).
+[mp3float @ 0x7ae7700212c0] Could not update timestamps for skipped samples.
+TRACK STARTED CALLED POST
+Track started: map[]
+song not found in db: sql: no rows in result set
+[mp3 @ 0x7ae774005040] Estimating duration from bitrate, this may be inaccurate
+2026/06/09 09:53:16 [decoder.ffmpeg:3] Requested content-type for "/music/02 In Your Time Of Sorrow.mp3": {audio=pcm(stereo)}
+2026/06/09 09:53:16 [decoder.ffmpeg:3] FFmpeg recognizes "/music/02 In Your Time Of Sorrow.mp3" as audio: {codec: mp3, 44100Hz, 2 channel(s)}
+2026/06/09 09:53:16 [decoder.ffmpeg:3] Decoded content-type for "/music/02 In Your Time Of Sorrow.mp3": {audio=pcm(stereo)}
+[mp3 @ 0x7ae774005040] Estimating duration from bitrate, this may be inaccurate
+[mp3float @ 0x7ae7700212c0] Could not update timestamps for discarded samples.
+2026/06/09 09:56:54 [decoder:2] Decoding "/music/The Prodigy - Get Your Fight On.mp3" ended: Ffmpeg_decoder.End_of_file.
+[mp3 @ 0x7ae770004c80] Estimating duration from bitrate, this may be inaccurate
+[mp3 @ 0x7ae770004c80] Estimating duration from bitrate, this may be inaccurate
+2026/06/09 09:56:55 [music:3] Prepared "/music/02 In Your Time Of Sorrow.mp3" (RID 20).
+TRACK STARTED CALLED POST
+Track started: map[]
+song not found in db: sql: no rows in result set
+2026/06/09 09:56:55 [decoder.ffmpeg:3] Requested content-type for "/music/Mike Posner - I Took A Pill In Ibiza (Seeb Remix) (Explicit).mp3": {audio=pcm(stereo)}
+2026/06/09 09:56:55 [decoder.ffmpeg:3] FFmpeg recognizes "/music/Mike Posner - I Took A Pill In Ibiza (Seeb Remix) (Explicit).mp3" as audio: {codec: mp3, 44100Hz, 2 channel(s)}
+2026/06/09 09:56:55 [decoder.ffmpeg:3] Decoded content-type for "/music/Mike Posner - I Took A Pill In Ibiza (Seeb Remix) (Explicit).mp3": {audio=pcm(stereo)}
+2026/06/09 10:01:12 [decoder:2] Decoding "/music/02 In Your Time Of Sorrow.mp3" ended: Ffmpeg_decoder.End_of_file.
+2026/06/09 10:01:13 [music:3] Prepared "/music/Mike Posner - I Took A Pill In Ibiza (Seeb Remix) (Explicit).mp3" (RID 21).
+[mp3float @ 0x7ae7700212c0] Could not update timestamps for skipped samples.
+TRACK STARTED CALLED POST
+Track started: map[]
+song not found in db: sql: no rows in result set
+2026/06/09 10:01:13 [decoder.ffmpeg:3] Requested content-type for "/music/Akcent - That's My Name (Ultra Music).mp3": {audio=pcm(stereo)}
+2026/06/09 10:01:13 [decoder.ffmpeg:3] FFmpeg recognizes "/music/Akcent - That's My Name (Ultra Music).mp3" as audio: {codec: mp3, 44100Hz, 2 channel(s)}
+2026/06/09 10:01:13 [decoder.ffmpeg:3] Decoded content-type for "/music/Akcent - That's My Name (Ultra Music).mp3": {audio=pcm(stereo)}
+[mp3float @ 0x7ae7700212c0] Could not update timestamps for discarded samples.
+2026/06/09 10:05:09 [decoder:2] Decoding "/music/Mike Posner - I Took A Pill In Ibiza (Seeb Remix) (Explicit).mp3" ended: Ffmpeg_decoder.End_of_file.
+[mp3float @ 0x7ae7700212c0] Could not update timestamps for skipped samples.
+2026/06/09 10:05:09 [music:3] Prepared "/music/Akcent - That's My Name (Ultra Music).mp3" (RID 22).
+TRACK STARTED CALLED POST
+Track started: map[]
+song not found in db: sql: no rows in result set
+[mov,mp4,m4a,3gp,3g2,mj2 @ 0x7ae780005080] st: 0 edit list: 1 Missing key frame while searching for timestamp: 0
+[mov,mp4,m4a,3gp,3g2,mj2 @ 0x7ae780005080] st: 0 edit list 1 Cannot find an index entry before timestamp: 0.
+2026/06/09 10:05:09 [decoder.ffmpeg:3] Requested content-type for "/music/Krieger - And One [ZTMlVTyFCKw].mp3": {audio=pcm(stereo)}
+2026/06/09 10:05:09 [decoder.ffmpeg:3] FFmpeg recognizes "/music/Krieger - And One [ZTMlVTyFCKw].mp3" as audio: {codec: mp3, 44100Hz, 2 channel(s)}, video: {codec: h264, 640x480, yuv420p}
+2026/06/09 10:05:09 [decoder.ffmpeg:3] Decoded content-type for "/music/Krieger - And One [ZTMlVTyFCKw].mp3": {audio=pcm(stereo)}
+[mov,mp4,m4a,3gp,3g2,mj2 @ 0x7ae780005080] st: 0 edit list: 1 Missing key frame while searching for timestamp: 0
+[mov,mp4,m4a,3gp,3g2,mj2 @ 0x7ae780005080] st: 0 edit list 1 Cannot find an index entry before timestamp: 0.
+[mp3float @ 0x7ae7700212c0] Could not update timestamps for discarded samples.
+2026/06/09 10:09:23 [decoder:2] Decoding "/music/Akcent - That's My Name (Ultra Music).mp3" ended: Ffmpeg_decoder.End_of_file.
+[mov,mp4,m4a,3gp,3g2,mj2 @ 0x7ae770004c80] st: 0 edit list: 1 Missing key frame while searching for timestamp: 0
+[mov,mp4,m4a,3gp,3g2,mj2 @ 0x7ae770004c80] st: 0 edit list 1 Cannot find an index entry before timestamp: 0.
+[mov,mp4,m4a,3gp,3g2,mj2 @ 0x7ae770004c80] st: 0 edit list: 1 Missing key frame while searching for timestamp: 0
+[mov,mp4,m4a,3gp,3g2,mj2 @ 0x7ae770004c80] st: 0 edit list 1 Cannot find an index entry before timestamp: 0.
+2026/06/09 10:09:23 [music:3] Prepared "/music/Krieger - And One [ZTMlVTyFCKw].mp3" (RID 23).
+TRACK STARTED CALLED POST
+Track started: map[]
+2026/06/09 10:09:23 [decoder.ffmpeg:3] Requested content-type for "/music/Get It Now.mp3": {audio=pcm(stereo)}
+2026/06/09 10:09:23 [decoder.ffmpeg:3] FFmpeg recognizes "/music/Get It Now.mp3" as audio: {codec: mp3, 44100Hz, 2 channel(s)}
+2026/06/09 10:09:23 [decoder.ffmpeg:3] Decoded content-type for "/music/Get It Now.mp3": {audio=pcm(stereo)}
+song not found in db: sql: no rows in result set
+2026/06/09 10:09:47 [decoder:2] Decoding "/music/Krieger - And One [ZTMlVTyFCKw].mp3" ended: Ffmpeg_decoder.End_of_file.
+2026/06/09 10:09:47 [music:3] Prepared "/music/Get It Now.mp3" (RID 24).
+[mp3float @ 0x7ae7700212c0] Could not update timestamps for skipped samples.
+TRACK STARTED CALLED POST
+Track started: map[]
+song not found in db: sql: no rows in result set
+2026/06/09 10:09:47 [decoder.ffmpeg:3] Requested content-type for "/music/Sete De Noi x Desert Rain (Adrian Sasca Remix).mp3": {audio=pcm(stereo)}
+2026/06/09 10:09:47 [decoder.ffmpeg:3] FFmpeg recognizes "/music/Sete De Noi x Desert Rain (Adrian Sasca Remix).mp3" as audio: {codec: mp3, 44100Hz, 2 channel(s)}
+2026/06/09 10:09:47 [decoder.ffmpeg:3] Decoded content-type for "/music/Sete De Noi x Desert Rain (Adrian Sasca Remix).mp3": {audio=pcm(stereo)}
+[mp3float @ 0x7ae7700212c0] Could not update timestamps for discarded samples.
+2026/06/09 10:14:45 [decoder:2] Decoding "/music/Get It Now.mp3" ended: Ffmpeg_decoder.End_of_file.
+2026/06/09 10:14:46 [music:3] Prepared "/music/Sete De Noi x Desert Rain (Adrian Sasca Remix).mp3" (RID 25).
+[mp3float @ 0x7ae7700212c0] Could not update timestamps for skipped samples.
+TRACK STARTED CALLED POST
+Track started: map[]
+song not found in db: sql: no rows in result set
+2026/06/09 10:14:46 [decoder.ffmpeg:3] Requested content-type for "/music/SABATON - Primo Victoria (Official Music Video).mp3": {audio=pcm(stereo)}
+2026/06/09 10:14:46 [decoder.ffmpeg:3] FFmpeg recognizes "/music/SABATON - Primo Victoria (Official Music Video).mp3" as audio: {codec: mp3, 44100Hz, 2 channel(s)}
+2026/06/09 10:14:46 [decoder.ffmpeg:3] Decoded content-type for "/music/SABATON - Primo Victoria (Official Music Video).mp3": {audio=pcm(stereo)}
+Server starting on :8080
+Server starting on :8080
+[mp3float @ 0x7ae7700212c0] Could not update timestamps for discarded samples.
+2026/06/09 10:17:48 [decoder:2] Decoding "/music/Sete De Noi x Desert Rain (Adrian Sasca Remix).mp3" ended: Ffmpeg_decoder.End_of_file.
+2026/06/09 10:17:48 [music:3] Prepared "/music/SABATON - Primo Victoria (Official Music Video).mp3" (RID 26).
+[mp3float @ 0x7ae7700212c0] Could not update timestamps for skipped samples.
+TRACK STARTED CALLED POST
+Track started: map[]
+song not found in db: sql: no rows in result set
+2026/06/09 10:17:48 [decoder.ffmpeg:3] Requested content-type for "/music/Three Days Grace - Animal I Have Become [j7rLdd8EiJQ].mp3": {audio=pcm(stereo)}
+2026/06/09 10:17:48 [decoder.ffmpeg:3] FFmpeg recognizes "/music/Three Days Grace - Animal I Have Become [j7rLdd8EiJQ].mp3" as audio: {codec: mp3, 48000Hz, 2 channel(s)}
+2026/06/09 10:17:48 [decoder.ffmpeg:3] Decoded content-type for "/music/Three Days Grace - Animal I Have Become [j7rLdd8EiJQ].mp3": {audio=pcm(stereo)}
+Server starting on :8080
+Server starting on :8080
+Server starting on :8080
+Server starting on :8080
+Server starting on :8080
+[mp3float @ 0x7ae7700212c0] Could not update timestamps for discarded samples.
+2026/06/09 10:21:36 [decoder:2] Decoding "/music/SABATON - Primo Victoria (Official Music Video).mp3" ended: Ffmpeg_decoder.End_of_file.
+[mp3float @ 0x7ae7700212c0] Could not update timestamps for skipped samples.
+2026/06/09 10:21:37 [music:3] Prepared "/music/Three Days Grace - Animal I Have Become [j7rLdd8EiJQ].mp3" (RID 27).
+2026/06/09 10:21:37 [decoder.ffmpeg:3] Requested content-type for "/music/Get It Now.mp3": {audio=pcm(stereo)}
+2026/06/09 10:21:37 [decoder.ffmpeg:3] FFmpeg recognizes "/music/Get It Now.mp3" as audio: {codec: mp3, 44100Hz, 2 channel(s)}
+2026/06/09 10:21:37 [decoder.ffmpeg:3] Decoded content-type for "/music/Get It Now.mp3": {audio=pcm(stereo)}
+TRACK STARTED CALLED POST
+Raw body: [
+  [
+  "on_air_timestamp",
+  "1781000497.00"
+],
+  [
+  "kind",
+  "{audio=pcm(stereo)}"
+],
+  [
+  "decoder",
+  "ffmpeg"
+],
+  [
+  "encoding",
+  "Lavf62.12.100"
+],
+  [
+  "filename",
+  "/music/Three Days Grace - Animal I Have Become [j7rLdd8EiJQ].mp3"
+],
+  [
+  "temporary",
+  "false"
+],
+  [
+  "source",
+  "music"
+],
+  [
+  "initial_uri",
+  "/music/Three Days Grace - Animal I Have Become [j7rLdd8EiJQ].mp3"
+],
+  [
+  "encoder",
+  "Lavf62.12.100"
+],
+  [
+  "status",
+  "playing"
+],
+  [
+  "on_air",
+  "2026/06/09 10:21:37"
+],
+  [
+  "rid",
+  "27"
+]
+]
+Track started: map[]
+song not found in db: sql: no rows in result set
+[mp3float @ 0x7ae7700212c0] Could not update timestamps for discarded samples.
+2026/06/09 10:25:28 [decoder:2] Decoding "/music/Three Days Grace - Animal I Have Become [j7rLdd8EiJQ].mp3" ended: Ffmpeg_decoder.End_of_file.
+2026/06/09 10:25:28 [music:3] Prepared "/music/Get It Now.mp3" (RID 28).
+[mp3float @ 0x7ae7700212c0] Could not update timestamps for skipped samples.
+TRACK STARTED CALLED POST
+Raw body: [
+  [
+  "compatible_brands",
+  "isomiso2avc1mp41"
+],
+  [
+  "on_air_timestamp",
+  "1781000728.00"
+],
+  [
+  "kind",
+  "{audio=pcm(stereo)}"
+],
+  [
+  "decoder",
+  "ffmpeg"
+],
+  [
+  "encoding",
+  "Lavf60.16.100"
+],
+  [
+  "filename",
+  "/music/Get It Now.mp3"
+],
+  [
+  "temporary",
+  "false"
+],
+  [
+  "source",
+  "music"
+],
+  [
+  "initial_uri",
+  "/music/Get It Now.mp3"
+],
+  [
+  "major_brand",
+  "isom"
+],
+  [
+  "encoder",
+  "Lavf60.16.100"
+],
+  [
+  "status",
+  "playing"
+],
+  [
+  "minor_version",
+  "512"
+],
+  [
+  "on_air",
+  "2026/06/09 10:25:28"
+],
+  [
+  "rid",
+  "28"
+]
+]
+Track started: map[]
+song not found in db: sql: no rows in result set
+2026/06/09 10:25:28 [decoder.ffmpeg:3] Requested content-type for "/music/Akcent - That's My Name (Ultra Music).mp3": {audio=pcm(stereo)}
+2026/06/09 10:25:28 [decoder.ffmpeg:3] FFmpeg recognizes "/music/Akcent - That's My Name (Ultra Music).mp3" as audio: {codec: mp3, 44100Hz, 2 channel(s)}
+2026/06/09 10:25:28 [decoder.ffmpeg:3] Decoded content-type for "/music/Akcent - That's My Name (Ultra Music).mp3": {audio=pcm(stereo)}
+Server starting on :8080
+Server starting on :8080
+[mp3float @ 0x7ae7700212c0] Could not update timestamps for discarded samples.
+2026/06/09 10:30:27 [decoder:2] Decoding "/music/Get It Now.mp3" ended: Ffmpeg_decoder.End_of_file.
+2026/06/09 10:30:27 [music:3] Prepared "/music/Akcent - That's My Name (Ultra Music).mp3" (RID 29).
+[mp3float @ 0x7ae7700212c0] Could not update timestamps for skipped samples.
+TRACK STARTED CALLED POST
+Parsed metadata: map[compatible_brands:isommp42 decoder:ffmpeg encoder:Lavf58.29.100 encoding:Lavf58.29.100 filename:/music/Akcent - That's My Name (Ultra Music).mp3 initial_uri:/music/Akcent - That's My Name (Ultra Music).mp3 kind:{audio=pcm(stereo)} major_brand:mp42 minor_version:0 on_air:2026/06/09 10:30:27 on_air_timestamp:1781001027.00 rid:29 source:music status:playing temporary:false]
+Filename: /music/Akcent - That's My Name (Ultra Music).mp3
+State: playing
+[mp3 @ 0x7ae774005040] Estimating duration from bitrate, this may be inaccurate
+2026/06/09 10:30:27 [decoder.ffmpeg:3] Requested content-type for "/music/02 In Your Time Of Sorrow.mp3": {audio=pcm(stereo)}
+2026/06/09 10:30:27 [decoder.ffmpeg:3] FFmpeg recognizes "/music/02 In Your Time Of Sorrow.mp3" as audio: {codec: mp3, 44100Hz, 2 channel(s)}
+2026/06/09 10:30:27 [decoder.ffmpeg:3] Decoded content-type for "/music/02 In Your Time Of Sorrow.mp3": {audio=pcm(stereo)}
+[mp3 @ 0x7ae774005040] Estimating duration from bitrate, this may be inaccurate
+2026/06/09 10:30:35 [music:3] Reloading playlist with URI /music/.
+2026/06/09 10:30:35 [decoder.ffmpeg:3] Requested content-type for "/music/Fly Project - Musica Official Music Video.mp3": {audio=pcm(stereo)}
+2026/06/09 10:30:35 [decoder.ffmpeg:3] FFmpeg recognizes "/music/Fly Project - Musica Official Music Video.mp3" as audio: {codec: mp3, 44100Hz, 2 channel(s)}
+2026/06/09 10:30:35 [decoder.ffmpeg:3] Decoded content-type for "/music/Fly Project - Musica Official Music Video.mp3": {audio=pcm(stereo)}
+2026/06/09 10:30:37 [music:3] Reloading playlist with URI /music/.
+2026/06/09 10:30:37 [decoder.ffmpeg:3] Requested content-type for "/music/Mike Posner - I Took A Pill In Ibiza (Seeb Remix) (Explicit).mp3": {audio=pcm(stereo)}
+2026/06/09 10:30:37 [decoder.ffmpeg:3] FFmpeg recognizes "/music/Mike Posner - I Took A Pill In Ibiza (Seeb Remix) (Explicit).mp3" as audio: {codec: mp3, 44100Hz, 2 channel(s)}
+2026/06/09 10:30:37 [decoder.ffmpeg:3] Decoded content-type for "/music/Mike Posner - I Took A Pill In Ibiza (Seeb Remix) (Explicit).mp3": {audio=pcm(stereo)}
+[mp3 @ 0x7ae780005080] Estimating duration from bitrate, this may be inaccurate
+2026/06/09 10:30:37 [decoder.ffmpeg:3] Requested content-type for "/music/02 In Your Time Of Sorrow.mp3": {audio=pcm(stereo)}
+2026/06/09 10:30:37 [decoder.ffmpeg:3] FFmpeg recognizes "/music/02 In Your Time Of Sorrow.mp3" as audio: {codec: mp3, 44100Hz, 2 channel(s)}
+2026/06/09 10:30:37 [decoder.ffmpeg:3] Decoded content-type for "/music/02 In Your Time Of Sorrow.mp3": {audio=pcm(stereo)}
+[mp3 @ 0x7ae780005080] Estimating duration from bitrate, this may be inaccurate
+2026/06/09 10:30:39 [music:3] Reloading playlist with URI /music/.
+2026/06/09 10:30:39 [decoder.ffmpeg:3] Requested content-type for "/music/Skillet - Whispers In The Dark [HQ] [ZRG5oOL5WO0].mp3": {audio=pcm(stereo)}
+2026/06/09 10:30:39 [decoder.ffmpeg:3] FFmpeg recognizes "/music/Skillet - Whispers In The Dark [HQ] [ZRG5oOL5WO0].mp3" as audio: {codec: mp3, 48000Hz, 2 channel(s)}
+2026/06/09 10:30:39 [decoder.ffmpeg:3] Decoded content-type for "/music/Skillet - Whispers In The Dark [HQ] [ZRG5oOL5WO0].mp3": {audio=pcm(stereo)}
+2026/06/09 10:30:40 [music:3] Reloading playlist with URI /music/.
+2026/06/09 10:30:40 [decoder.ffmpeg:3] Requested content-type for "/music/Cartoon, Jéja - On & On (feat. Daniel Levi) ｜ Electronic Pop ｜ NCS - Copyright Free Music [K4DyBUG242c].mp3": {audio=pcm(stereo)}
+2026/06/09 10:30:40 [decoder.ffmpeg:3] FFmpeg recognizes "/music/Cartoon, Jéja - On & On (feat. Daniel Levi) ｜ Electronic Pop ｜ NCS - Copyright Free Music [K4DyBUG242c].mp3" as audio: {codec: mp3, 48000Hz, 2 channel(s)}
+2026/06/09 10:30:40 [decoder.ffmpeg:3] Decoded content-type for "/music/Cartoon, Jéja - On & On (feat. Daniel Levi) ｜ Electronic Pop ｜ NCS - Copyright Free Music [K4DyBUG242c].mp3": {audio=pcm(stereo)}
+Halfway - locking votes in 10s
+Vote result: like
+2026/06/09 10:33:30 [main:3] Shutdown signal received.
+2026/06/09 10:33:30 [threads:3] Main loop exited
+2026/06/09 10:33:30 [main:3] Shutdown started!
+2026/06/09 10:33:30 [threads:3] Waiting for main threads to terminate...
+2026/06/09 10:33:30 [/radio:3] Closing connection...
+2026/06/09 10:33:30 [clock.main:3] Streaming loop stopped.
+2026/06/09 10:33:30 [threads:3] Main threads terminated.
+2026/06/09 10:33:30 [threads:3] Shutting down scheduler...
+2026/06/09 10:33:30 [threads:3] Scheduler shut down.
+TRACK STARTED CALLED POST
+Parsed metadata: map[]
+Filename: 
+song not found in db: sql: no rows in result set
+TRACK STARTED CALLED POST
+Parsed metadata: map[compatible_brands:mp41avc1 creation_time:2025-11-25T10:54:37.000000Z decoder:ffmpeg encoder:vlc 3.0.21 stream output encoder-eng:vlc 3.0.21 stream output filename:/music/Krieger - And One [ZTMlVTyFCKw].mp3 handler_name:SoundHandler initial_uri:/music/Krieger - And One [ZTMlVTyFCKw].mp3 kind:{audio=pcm(stereo)} language:eng major_brand:isom minor_version:0 on_air:2026/06/09 10:33:39 on_air_timestamp:1781001219.00 rid:0 source:music status:playing temporary:false vendor_id:[0][0][0][0]]
+Filename: /music/Krieger - And One [ZTMlVTyFCKw].mp3
+State: playing
+Halfway - locking votes in 10s
+State: selecting
+Triggering pipeline, vote was: like
+Vote result: like
+State: selecting
+Triggering pipeline, vote was: like
+TRACK STARTED CALLED POST
+Parsed metadata: map[decoder:ffmpeg filename:/music/alec_koff-carnaval-484622.mp3 initial_uri:/music/alec_koff-carnaval-484622.mp3 kind:{audio=pcm(stereo)} on_air:2026/06/09 10:34:03 on_air_timestamp:1781001243.00 rid:1 source:music status:playing temporary:false]
+Filename: /music/alec_koff-carnaval-484622.mp3
+State: playing
+Halfway - locking votes in 10s
+Vote result: like
+State: selecting
+Triggering pipeline, vote was: like
+Server starting on :8080
+TRACK STARTED CALLED POST
+Parsed metadata: map[compatible_brands:isomiso2avc1mp41 decoder:ffmpeg encoder:Lavf60.16.100 encoding:Lavf60.16.100 filename:/music/Get It Now.mp3 initial_uri:/music/Get It Now.mp3 kind:{audio=pcm(stereo)} major_brand:isom minor_version:512 on_air:2026/06/09 10:35:04 on_air_timestamp:1781001304.00 rid:2 source:music status:playing temporary:false]
+Filename: /music/Get It Now.mp3
+State: playing
+Server starting on :8080

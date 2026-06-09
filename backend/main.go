@@ -146,14 +146,28 @@ func main() {
 			http.Error(w, "POST only", http.StatusMethodNotAllowed)
 			return
 		}
-		var metadata map[string]interface{}
-		json.NewDecoder(r.Body).Decode(&metadata)
-		fmt.Println("Track started:", metadata)
-		fp, _ := metadata["filename"].(string)
+
+		body, _ := io.ReadAll(r.Body)
+
+		var pairs [][]string
+		json.Unmarshal(body, &pairs)
+
+		metadata := make(map[string]string)
+		for _, pair := range pairs {
+			if len(pair) == 2 {
+				metadata[pair[0]] = pair[1]
+			}
+		}
+
+		fmt.Println("Parsed metadata:", metadata)
+		fp := metadata["filename"]
+		fmt.Println("Filename:", fp)
+
 		voteMutex.Lock()
 		voteYes = 0
 		voteNo = 0
 		voteMutex.Unlock()
+
 		var duration float64
 		err := db.QueryRow("SELECT duration FROM songs WHERE filepath = ?", fp).Scan(&duration)
 		if err != nil {
@@ -161,9 +175,11 @@ func main() {
 			w.WriteHeader(http.StatusOK)
 			return
 		}
+
 		songStart = time.Now()
 		songDuration = duration
 		setState(Playing)
+
 		go func() {
 			half := time.Duration(duration/2) * time.Second
 			time.Sleep(half)
@@ -183,6 +199,7 @@ func main() {
 			setState(Selecting)
 			fmt.Println("Triggering pipeline, vote was:", result)
 		}()
+
 		w.WriteHeader(http.StatusOK)
 	})
 
