@@ -29,12 +29,12 @@
             <mxGeometry height="93" width="173" x="35" y="45" as="geometry" />
           </mxCell>
         </UserObject>
-        <UserObject label="💾 SQLite DB&#xa;songs.db" mermaidId="n:SQLiteDB" mermaidBaseStyle="html=1;whiteSpace=wrap;strokeWidth=1;fillColor=light-dark(#ECECFF,#1f2020);strokeColor=light-dark(#9370DB,#cccccc);fontColor=light-dark(#333333,#cccccc);fontFamily=Trebuchet MS,Verdana,Arial,sans-serif;fontSize=16;" mermaidBaseValue="💾 SQLite DB&#xa;songs.db" id="fkphbUrw3EFix602kyXa-6">
+        <UserObject label="💾 SQLite DB&lt;br&gt;radio_library.db" mermaidId="n:SQLiteDB" mermaidBaseStyle="html=1;whiteSpace=wrap;strokeWidth=1;fillColor=light-dark(#ECECFF,#1f2020);strokeColor=light-dark(#9370DB,#cccccc);fontColor=light-dark(#333333,#cccccc);fontFamily=Trebuchet MS,Verdana,Arial,sans-serif;fontSize=16;" mermaidBaseValue="💾 SQLite DB&#xa;songs.db" id="fkphbUrw3EFix602kyXa-6">
           <mxCell parent="fkphbUrw3EFix602kyXa-4" style="html=1;whiteSpace=wrap;strokeWidth=1;fillColor=light-dark(#ECECFF,#1f2020);strokeColor=light-dark(#9370DB,#cccccc);fontColor=light-dark(#333333,#cccccc);fontFamily=Trebuchet MS,Verdana,Arial,sans-serif;fontSize=16;" vertex="1">
             <mxGeometry height="73" width="160" x="316" y="261" as="geometry" />
           </mxCell>
         </UserObject>
-        <UserObject label="📁 Audio Cache&#xa;/melodii&#xa;/audio" mermaidId="n:AudioCache" mermaidBaseStyle="html=1;whiteSpace=wrap;strokeWidth=1;fillColor=light-dark(#ECECFF,#1f2020);strokeColor=light-dark(#9370DB,#cccccc);fontColor=light-dark(#333333,#cccccc);fontFamily=Trebuchet MS,Verdana,Arial,sans-serif;fontSize=16;" mermaidBaseValue="📁 Audio Cache&#xa;/melodii&#xa;/audio" id="fkphbUrw3EFix602kyXa-7">
+        <UserObject label="📁 Audio Cache&lt;br&gt;/music" mermaidId="n:AudioCache" mermaidBaseStyle="html=1;whiteSpace=wrap;strokeWidth=1;fillColor=light-dark(#ECECFF,#1f2020);strokeColor=light-dark(#9370DB,#cccccc);fontColor=light-dark(#333333,#cccccc);fontFamily=Trebuchet MS,Verdana,Arial,sans-serif;fontSize=16;" mermaidBaseValue="📁 Audio Cache&#xa;/melodii&#xa;/audio" id="fkphbUrw3EFix602kyXa-7">
           <mxCell parent="fkphbUrw3EFix602kyXa-4" style="html=1;whiteSpace=wrap;strokeWidth=1;fillColor=light-dark(#ECECFF,#1f2020);strokeColor=light-dark(#9370DB,#cccccc);fontColor=light-dark(#333333,#cccccc);fontFamily=Trebuchet MS,Verdana,Arial,sans-serif;fontSize=16;" vertex="1">
             <mxGeometry height="93" width="176" x="153" y="438" as="geometry" />
           </mxCell>
