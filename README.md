@@ -21,7 +21,7 @@ If any step in the pipeline is too slow or fails, the system falls back to a dir
 ## Architecture
 
 
-![diagram of the component architecture](/docs/components_diagram.svg)
+![diagram of the component architecture](/docs/diagrams/components_diagram.svg)
 
 
 ---
