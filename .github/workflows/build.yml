@@ -30,6 +30,9 @@ jobs:
         run: go build -o backend ./...
         working-directory: backend
 
+      - name: Check binary exists
+        run: ls -la backend/
+
       - name: Copy binary to VPS
         uses: appleboy/scp-action@v0.1.7
         with:
@@ -38,6 +41,7 @@ jobs:
           key: ${{ secrets.VPS_SSH_KEY }}
           source: backend/backend
           target: /root/agent-radio/backend/
+          strip_components: 1
 
       - name: Restart service
         uses: appleboy/ssh-action@v1
